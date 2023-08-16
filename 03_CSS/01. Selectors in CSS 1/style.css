@@ -1,0 +1,44 @@
+/* Universal selector */
+* {
+  background-color: azure;
+  padding: 10px;
+}
+
+/* class selector */
+.two {
+  color: rgb(201, 53, 53);
+}
+
+/* id selector */
+#special {
+  color: rgb(28, 3, 52);
+}
+
+/* Attribute selector */
+a[href="www.google.com"] {
+  color: chartreuse;
+}
+
+/* if we want to select all the links that start with the same id  */
+a[href^="www.google.com"] {
+  color: brown;
+}
+
+/* Combinators */
+
+/* 1. Child selector */
+section > h2 {
+  color: rgb(41, 207, 41);
+}
+/* This would only select the h2 which is directly inside the section (Direct child) */
+
+/* 2. Sibling selector */
+h2 ~ p {
+  color: darkorchid;
+}
+/* This would select all the siblings of h2 which are paragraphs */
+
+/* we can select the adjacent siblings using the + sign  */
+h2 + a {
+  color: deepskyblue;
+}

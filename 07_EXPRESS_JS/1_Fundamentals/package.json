@@ -1,0 +1,17 @@
+{
+  "name": "05_first_server",
+  "version": "1.0.0",
+  "description": "This is my first server",
+  "main": "App.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "author": "Kannan",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "3.0.1"
+  }
+}

@@ -1,0 +1,61 @@
+section {
+    display: flex;
+    /* flex-direction: row;
+    flex-wrap: wrap; */
+
+    flex-flow: row wrap;
+    /* this line is doing the same thing the above two line */
+
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    border: 2px dotted darkblue;
+    height: 90vh;
+}
+
+div {
+    padding: .5rem;
+    border: 4px solid black;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+
+}
+
+.red {
+
+    /* order: -1; */
+    /* This would put all the red items at the beginning. */
+    height: 75px;
+    background-color: red;
+    /* flex-grow: 1; */
+}
+
+.green {
+
+    height: 125px;
+
+
+    background-color: green;
+}
+
+.blue {
+    height: 100px;
+    background-color: blue;
+
+}
+
+#hello {
+    /* font-size: 2rem; */
+    display: block;
+    padding: 2px;
+    border: none;
+    font-size: 1.9rem;
+
+}
+
+p {
+    margin: 16px;
+}

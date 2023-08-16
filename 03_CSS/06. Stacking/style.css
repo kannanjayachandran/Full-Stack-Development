@@ -1,0 +1,29 @@
+#red {
+    z-index: 1;
+    background-color: red;
+
+}
+
+#blue {
+    z-index: 2;
+    background-color: blue;
+    top: 100px;
+    left: 150px;
+}
+
+#green {
+    z-index: 3;
+    top: 200px;
+    left: 40px;
+    background-color: green;
+}
+
+div {
+    position: fixed;
+    width: 200px;
+    height: 200px;
+    border: 7px solid black;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+}

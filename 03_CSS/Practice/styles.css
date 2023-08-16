@@ -1,0 +1,45 @@
+#pond {
+    z-index: 20;
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 1em;
+    box-sizing: border-box;
+    background: rgba(30, 36, 87, 0.8)
+}
+
+.pads {
+    display: flex;
+}
+
+.redPad {
+    display: flex;
+    background: red;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-flow: column-reverse wrap;
+}
+
+.greenPad {
+    display: flex;
+    background: green;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    justify-content: flex-end;
+}
+
+.yellowPad {
+    display: flex;
+    background: yellow;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    justify-content: flex-end;
+}

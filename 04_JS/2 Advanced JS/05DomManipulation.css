@@ -1,0 +1,26 @@
+*{
+    font-size: medium;
+}
+
+#scrollable{
+    position: relative;
+    background-color: aqua;
+    height: 110px;
+    padding: 10px;
+    border: 8px solid black;
+    margin: 1rem;
+    overflow: auto;
+
+}
+
+.blue{
+    color: blue;
+}
+
+.big{
+    font-size: 2em;
+}
+
+.red{
+    color: red;
+}

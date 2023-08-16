@@ -1,0 +1,355 @@
+/*     Global styles     */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #ffe162;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 4.8rem;
+  padding-top: 15rem;
+}
+
+h3 {
+  font-size: 3rem;
+  font-weight: normal;
+}
+
+h4,
+h5 {
+  font-size: 2.7rem;
+}
+
+li,
+button,
+label,
+input,
+p {
+  font-size: 2rem;
+}
+
+button {
+  padding: 2rem 6rem;
+  background: #041b2d;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: background 200ms ease-in;
+}
+
+button:hover {
+  background: #ffe162;
+  color: black;
+}
+
+/*      Nav-section     */
+.main-head {
+  background: #041b2d;
+  position: sticky;
+  top: 0px;
+  z-index: 3;
+}
+
+nav {
+  min-height: 10vh;
+  display: flex;
+  width: 90%;
+  margin: auto;
+  padding: 2rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+nav ul {
+  display: flex;
+  flex: 1 1 40rem;
+  justify-content: space-evenly;
+  align-items: center;
+  list-style: none;
+}
+
+#logo {
+  flex: 2 1 40rem;
+  font-family: "Pattaya", sans-serif;
+  font-weight: 400;
+  color: #ffe162;
+}
+
+/* .hero */
+.hero {
+  min-height: 90vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), transparent),
+    url("/BASICS/PROJ7-\ Construction-Website/images/front.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+.hero h3 {
+  align-items: flex-end;
+  padding: 5rem;
+}
+h2 .anything {
+  color: #ffe162;
+}
+
+/*      LOCATION SECTION      */
+#location {
+  min-height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), transparent),
+    url("/BASICS/PROJ7-\ Construction-Website/images/nw.png");
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.location-head {
+  width: 90%;
+  margin: auto;
+}
+
+.location-head h2 {
+  padding: 1rem 0rem;
+  color: #342c44;
+}
+
+.location-head h3 {
+  padding: 4rem 0rem;
+  color: #342c44;
+}
+
+.cloud {
+  position: absolute;
+  top: 0%;
+  right: 0%;
+}
+
+.moving-cloud-1 {
+  animation: cloudAnimation 3s infinite alternate ease-in-out;
+}
+
+.moving-cloud-2 {
+  top: 15%;
+  z-index: -1;
+  opacity: 0.5;
+  animation: cloudAnimation 3.2s infinite alternate ease-in-out;
+}
+
+.strategy {
+  color: #ffe162;
+}
+
+/*      Cloud Animation       */
+@keyframes cloudAnimation {
+  from {
+    transform: translate(10%, -10%);
+  }
+  to {
+    transform: translate(0%, 0%);
+  }
+}
+
+/*       FEATURES     */
+.features-head {
+  background: #041b2d;
+  padding: 3rem;
+  min-height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+.build {
+  text-emphasis: none;
+  color: #ffe162;
+}
+
+.features-head h2 {
+  padding-top: 2rem;
+}
+
+.cards {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  min-height: 70vh;
+  align-items: center;
+  flex-wrap: wrap;
+  color: #041b2d;
+  text-align: center;
+}
+
+.card {
+  text-align: center;
+  flex: 1 1 25rem;
+  min-height: 40vh;
+  margin: 2rem 5rem;
+  box-shadow: 0 10px 10px 10px rgba(0, 0, 0, 0.1),
+    0 10px 20px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+  max-width: 20%;
+  margin: 2rem;
+}
+
+.card-head {
+  background: #ffe162;
+}
+
+.card h4,
+.card p {
+  padding: 1rem;
+}
+
+/*     Contact form    */
+#contact {
+  min-height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), transparent),
+    url("/BASICS/PROJ7-\ Construction-Website/images/contact.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-wrapper {
+  background: rgba(4, 27, 45, 0.8);
+  width: 60%;
+  color: white;
+  border-radius: 20px;
+}
+
+.form-head {
+  text-align: center;
+  padding: 4rem;
+}
+.name-form,
+.email-form {
+  padding: 3rem;
+  text-align: center;
+}
+
+.form-wrapper label {
+  margin: 0rem 3rem;
+}
+
+.form-wrapper button {
+  width: 100%;
+  padding: 2rem;
+  margin-top: 8rem;
+}
+
+.form-wrapper label {
+  padding: 1rem 3rem;
+}
+
+footer {
+  color: white;
+  background: #041b2d;
+}
+
+.footer-wrapper {
+  display: flex;
+  padding: 2rem;
+  width: 90%;
+  margin: auto;
+  align-items: center;
+  min-height: 10vh;
+  flex-wrap: wrap;
+}
+
+footer h5 {
+  display: flex;
+  list-style: none;
+  flex: 1 1 40rem;
+  flex-direction: column;
+}
+footer ul {
+  display: flex;
+  list-style: none;
+  flex: 1 1 40rem;
+  justify-content: space-evenly;
+  align-items: center;
+}
+/* MEDIA QUERIES*/
+@media screen and (max-width: 932px) {
+  html {
+    font-size: 45%;
+  }
+  nav {
+    text-align: center;
+  }
+  #logo {
+    padding: 2rem;
+  }
+  .cloud {
+    height: 40rem;
+    pointer-events: none;
+  }
+  .moving-cloud-1 {
+    z-index: -1;
+  }
+  .moving-cloud-2 {
+    z-index: -2;
+  }
+  .location-head h3 {
+    background: rgba(95, 95, 95, 0.7);
+    border-radius: 20px;
+    text-align: center;
+    color: white;
+    padding: 1rem;
+  }
+  .form-wrapper {
+    width: 100%;
+  }
+  footer {
+    text-align: center;
+  }
+  footer h5 {
+    padding-bottom: 3rem;
+  }
+}
+
+@media screen and (max-width: 390) {
+  .moving-cloud-2 {
+    top: 10%;
+  }
+}
+
+@media screen and (max-width: 414) {
+  .moving-cloud-2 {
+    top: 8%;
+    animation: cloudAnimation 3.3s infinite alternate ease-in-out;
+  }
+}

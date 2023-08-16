@@ -1,0 +1,45 @@
+* {
+    background-color: #F5F5DC;
+}
+
+html {
+    font-size: 24px;
+}
+
+p {
+    width: 70ch;
+}
+
+.parent {
+    font-size: 1.5rem;
+    width: 75%;
+    border: 2px solid black;
+}
+
+.red {
+    font-size: 1em;
+    width: 50%;
+    background-color: red;
+}
+
+.blue {
+    font-size: 1rem;
+    width: 50vw;
+    /* Half of the browser window */
+    background-color: blue;
+}
+
+.green {
+    font-size: 16px;
+    width: 10rem;
+    /* 10 * 16 = 160 px assuming that the user didn't changed the base html font size */
+    background-color: green;
+}
+
+div {
+    margin: 1rem;
+}
+
+h1 {
+    color: rgb(80, 8, 8);
+}

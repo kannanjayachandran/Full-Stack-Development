@@ -1,0 +1,8 @@
+body {
+  background: rgb(164, 211, 71);
+}
+.mobile,
+.tablet,
+.desktop {
+  font-size: 3rem;
+}

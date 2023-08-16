@@ -1,0 +1,31 @@
+p {
+    font-size: 2rem;
+    margin: 1.5rem;
+    padding: 1rem;
+    border: 2px solid black;
+}
+
+body>p {
+    background-color: rgb(90, 203, 240);
+}
+
+#box {
+
+    position: sticky;
+    bottom: 10px;
+    top: 10px;
+    left: 40%;
+    border: 2px solid black;
+    width: 15rem;
+    height: 10rem;
+    background-color: rgb(54, 232, 54);
+}
+
+#long {
+    background-color: lightyellow;
+}
+
+h1 {
+    font-size: 46px;
+    color: rgb(5, 111, 76);
+}

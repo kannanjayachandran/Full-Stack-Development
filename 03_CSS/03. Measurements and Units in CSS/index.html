@@ -1,0 +1,71 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css Units</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <h1>Css Units</h1>
+    <ol>
+        <li>px - pixel absolute length</li>
+        <li>em - Relative to font size</li>
+        <li>rem - Relative to root element font size</li>
+        <li>vw - 1% of viewport width</li>
+        <li>vh - 1% of viewport height</li>
+        <li>ch - width of "0" character</li>
+        <li>% - usually Relative to parent value</li>
+
+    </ol>
+    <h2>Where to use</h2>
+    <h3>width and height</h3>
+    <ol>
+        <li>% - to be Relative to parent</li>
+        <li>vw/vh - to be Relative to viewport</li>
+        <li>ch- for paragraph width</li>
+        <li>rem - for closer to absolute value</li>
+        <li>px - last resort for true absolute value</li>
+    </ol>
+    <h3>Margin</h3>
+    <ol>
+        <li>rem - for closer to absolute value</li>
+        <li>em - to scale with font size</li>
+        <li>px - last resort small value</li>
+    </ol>
+    <h3>Borders and shadows</h3>
+    <ol>
+        <li>px - for small values (preferred as they wont change much)</li>
+        <li>rem/em - okay (But scaling wont look great)</li>
+    </ol>
+    <h3>Font size</h3>
+    <ol>
+        <li>rem - usually the best</li>
+        <li>em - Scale to parent size</li>
+        <li>px - last resort</li>
+    </ol>
+
+    <h2>Example</h2>
+    <div class="parent">
+        <div class="blue">Blue</div>
+        <div class="green">Green</div>
+        <div class="red">Red</div>
+    </div>
+    <p>
+        Very long paragraph.
+        Very long paragraph.
+        Very long paragraph.
+        Very long paragraph.
+        Very long paragraph.
+        Very long paragraph.
+        Very long paragraph.
+        Very long paragraph.
+        Very long paragraph.
+        Very long paragraph.
+    </p>
+</body>
+
+
+</html>

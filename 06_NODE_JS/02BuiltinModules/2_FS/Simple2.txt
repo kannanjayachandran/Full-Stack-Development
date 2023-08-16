@@ -1,0 +1,2 @@
+Written using Promise object of fs module
+This is the first text file.  This is the second File. 

@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 65%;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+body {
+  background: lightcoral;
+}
+
+h1 {
+  font-size: 5rem;
+}
+h2 {
+  font-size: 6rem;
+  background: white;
+}

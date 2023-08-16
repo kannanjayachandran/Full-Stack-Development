@@ -1,0 +1,26 @@
+body {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 1fr 3fr 1fr;
+}
+
+/* 
+display-grid : would make all child elements grid.
+
+grid-template-columns would specify how large each 
+grid should be.
+
+fr : stands for fractional unit. It basically defines
+that the grid should be larger in proportionate to the 
+other elements. */
+
+
+
+
+
+
+body>* {
+    border: 5px solid lightblue;
+}
+
+/* This gives the border to the direct children of the body */

@@ -1,0 +1,56 @@
+* {
+  font-weight: bold;
+  background-color: #F2DEBA;
+  align-items: center;
+  text-align: center;
+}
+
+h1 {
+  padding-top: 150px;
+  color: #6C00FF;
+}
+
+h2 {
+  color: #6C00FF;
+}
+
+h2:first-of-type {
+  color: darkgreen;
+}
+
+/* :first-of-type is a pseudo selector that would select the first appearing tag of the defined type and apply the styling */
+
+p {
+  font-size: large;
+  color: #6C00FF;
+  padding: 2px;
+}
+
+/* pseudo class selectors */
+a:link {
+  color: #2C00FF;
+}
+
+/* The above pseudo selector would apply the css to the link
+ befor we click on them, after clicking it would not be applicable */
+
+a:visited {
+  color: #ff0000;
+}
+
+/* The above pseudo selector would apply the css to the link
+ after clicking it */
+
+.hello h2::first-letter {
+  color: aliceblue;
+  font-size: 2em;
+}
+
+
+.hello h2::before {
+  content: ">";
+}
+
+.hello h2::after {
+  content: "<";
+}
