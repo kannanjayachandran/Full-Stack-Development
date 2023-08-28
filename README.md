@@ -24,7 +24,9 @@
 | 8. | MongoDB | [Link](./08_MONGO_DB/) |
 | 9. | Typescript | [Link](./09_TS/) |
 
-> **Note**: This is a rough outline of the course, more topics might be added in the future.
+> **Note**: This is a rough outline of the course, more topics might be added in the future
 
 **[Resources](./Extras/Resource.md)** | **[License](./Extras/LICENSE)** | **[Code of Conduct](./Extras/CODE_OF_CONDUCT.md)** | **[Contribution Guideline](./Extras/CONTRIBUTING.md)**
 ### If you like this repository, give it a ⭐️
+
+
