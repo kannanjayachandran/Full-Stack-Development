@@ -14,7 +14,7 @@
 
 | S.No. | Topics | Link |
 | :---: | :--- | :---: |
-| 1. | Fundamentals of Web Development | [Link](./0_Web%20Dev%20Fundamentals/) |
+| 1. | Fundamentals of Web Development | [Link](./01_Web%20Dev%20Fundamentals/Readme.md) |
 | 2. | HTML | [Link](./02_HTML/) |
 | 3. | CSS | [Link](./03_CSS/) |
 | 4. | JavaScript | [Link](./04_JS/) |
