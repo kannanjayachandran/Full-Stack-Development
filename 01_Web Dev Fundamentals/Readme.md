@@ -1,12 +1,16 @@
-## Web Dev Fundamentals
+## Fundamentals of web development 🕸️
 
-### This section contains notes on the fundamentals of web development.
+Web development is the dynamic process of conceptualizing, designing, building, and deploying high-quality, interactive, and visually stunning websites and applications.
 
-|sl.no:|Topic:|Link:|
-|---|---|---|
-|1| **Introduction**, What happens when you click on `www.google.com`|[Answer](./Life%20Cycle.md)|
-|2| **HTTP**, How computers talk to each other.|[Answer](./HTTP.md)|
-|3| **APIs**, How to communicate with the server|[Answer](./API.md)|
-|4| **Web Security**, How secured is your data|[Answer](./Web%20Security.md)|
-|5| **Rendering**, How browsers render content|[Answer](./Rendering.md)|
-|6| **Browsers**, How they work|[Answer](./Browsers.md)|
+We use almost all programming languages, technologies, and frameworks to build websites and web applications. Some of the most popular ones are HTML, CSS, JavaScript, along with tons of frameworks and libraries.
+
+Whatever tools we may use, understanding the underlying mechanics of how the web works is essential. 
+
+|Topic:|Link|
+|---|---|
+| **Introduction -** What happens when you click on `www.google.com`|[Read](./Life%20Cycle.md)|
+| **HTTP**, How computers talk to each other.|[Read](./HTTP.md)|
+| **APIs**, How to communicate with the server|[Read](./API.md)|
+| **Web Security**, How secured is your data|[Read](./Web%20Security.md)|
+| **Rendering**, How browsers render content|[Read](./Rendering.md)|
+| **Browsers**, How they work|[Read](./Browsers.md)|
