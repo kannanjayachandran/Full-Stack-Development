@@ -1,6 +1,6 @@
 /* Universal selector */
 * {
-  background-color: azure;
+  background-color: #EDEADE;
   padding: 10px;
 }
 
@@ -27,18 +27,20 @@ a[href^="www.google.com"] {
 /* Combinators */
 
 /* 1. Child selector */
-section > h2 {
+section>h2 {
   color: rgb(41, 207, 41);
 }
+
 /* This would only select the h2 which is directly inside the section (Direct child) */
 
 /* 2. Sibling selector */
-h2 ~ p {
+h2~p {
   color: darkorchid;
 }
+
 /* This would select all the siblings of h2 which are paragraphs */
 
 /* we can select the adjacent siblings using the + sign  */
-h2 + a {
+h2+a {
   color: deepskyblue;
 }

@@ -32,7 +32,7 @@ a:link {
 }
 
 /* The above pseudo selector would apply the css to the link
- befor we click on them, after clicking it would not be applicable */
+ before we click on them, after clicking it would not be applicable */
 
 a:visited {
   color: #ff0000;

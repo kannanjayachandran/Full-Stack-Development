@@ -21,11 +21,9 @@ div {
     color: white;
     font-size: 2rem;
     font-weight: bold;
-
 }
 
 .red {
-
     /* order: -1; */
     /* This would put all the red items at the beginning. */
     height: 75px;
@@ -34,10 +32,7 @@ div {
 }
 
 .green {
-
     height: 125px;
-
-
     background-color: green;
 }
 
@@ -53,7 +48,6 @@ div {
     padding: 2px;
     border: none;
     font-size: 1.9rem;
-
 }
 
 p {
