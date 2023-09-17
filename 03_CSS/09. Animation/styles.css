@@ -1,0 +1,62 @@
+body {
+    background-color: antiquewhite;
+}
+
+.container {
+    height: 70vh;
+    display: flex;
+}
+
+.circle {
+    background-color: rgb(197, 48, 48);
+    height: 100px;
+    width: 100px;
+    border-radius: 50px;
+    margin: auto;
+    animation: circlePulse 1s infinite;
+    animation-timing-function: ease;
+}
+
+.rectangle {
+
+    background-color: rgb(11, 235, 227);
+    height: 100px;
+    width: 200px;
+    margin: auto;
+    animation: rectPulse 1s infinite;
+    animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes circlePulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.7;
+    }
+
+    50% {
+        transform: scale(1.5);
+        opacity: 0.3;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 0.7;
+    }
+}
+
+@keyframes rectPulse {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.5);
+        background: hotpink;
+    }
+
+    100% {
+        transform: scale(1);
+        background: lightseagreen;
+    }
+}

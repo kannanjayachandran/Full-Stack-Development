@@ -1,0 +1,30 @@
+:root {
+    --main-color: #00334c;
+    --section-size: 200px;
+    --flex-gap: 12px;
+}
+
+
+h1 {
+    color: var(--main-color);
+}
+
+h2 {
+    padding: 12px;
+    color: white;
+}
+
+main {
+    display: flex;
+    border: 5px solid black;
+    gap: var(--flex-gap);
+    width: calc(var(--section-size) * 2 + var(--flex-gap));
+}
+
+section {
+    flex-basis: var(--section-size);
+    flex-shrink: 0;
+    flex-grow: 0;
+    background-color: var(--main-color);
+
+}

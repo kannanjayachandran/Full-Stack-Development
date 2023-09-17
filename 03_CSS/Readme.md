@@ -1,4 +1,4 @@
-# CSS
+<h1 align="center">CSS</h1>
 
 CSS is vast and it takes time to master it. Here I want to lay some sort of foundational knowledge on core CSS concepts and ultimately move on to CSS frameworks. The following topis will be covered:
 
@@ -434,41 +434,518 @@ selector {
 
 ### Flexbox
 
-Flexbox is a layout mechanism designed for laying out groups of items in one dimension. Learn how to use it in this module. It can have the following features;
+`Flexbox` is a layout mechanism designed for laying out groups of items in one dimension. The main idea behind the flex layout is to give the container the ability to alter its items’ width/height (and order) to best fill the available space. A flex container expands items to fill available free space or shrinks them to prevent overflow.
 
-- They can display as a row, or a column.
+Flexbox layout is direction-agnostic unlike regular layouts (block - vertical-based, inline - horizontal-based).
 
-- They respect the writing mode of the document.
-
-- They are single line by default, but can be asked to wrap onto multiple lines.
-
-- Items in the layout can be visually reordered, away from their order in the DOM.
-
-- Space can be distributed inside the items, so they become bigger and smaller according to the space available in their parent.
-- Space can be distributed around the items and flex lines in a wrapped layout, using the Box Alignment properties.
-
-- The items themselves can be aligned on the cross axis.
+> <picture>
+>   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Mqxx/GitHub-Markdown/main/blockquotes/badge/light-theme/note.svg">
+>   <img alt="Note" src="https://raw.githubusercontent.com/Mqxx/GitHub-Markdown/main/blockquotes/badge/dark-theme/note.svg">
+> </picture><br>
+>
+> If you are building a small scale website or preferably a layout consisting of one dimensional elements {Optional wrapping}, flexbox is the way to go. Using flex box is relatively easier than the older layout mechanisms.
+>
+> Also direct children of a flex container are called flex items.
 
 ![Flex box image](image-1.png)
 
-The main axis is set by the `flex-direction` property. If that is `row` your main axis is along the row, if it is `column` your main axis is along the column. The cross axis is perpendicular to the main axis. If your main axis is along the row, your cross axis is along the column and vice versa.
+- The flex layout has two axes, the main axis and the cross axis.
 
-- Creating a flex container
+**Basic terms in flexbox**
 
-```html
-<div class="container" id="container">
-  <div>One</div>
-  <div>Item two</div>
-  <div>The item we will refer to as three</div>
-</div>
+Since flexbox is a whole module and not a single property, it involves a lot of things including its whole set of properties. Some of them are meant to be set on the container (parent element, known as “flex container”) whereas the others are meant to be set on the children (said “flex items”).
+
+![Basic terms in flexbox](./flex-direction-terms.svg)
+
+- `flex container` - The parent element that has `display: flex` set on it.
+
+- `flex item` - The children of the flex container.
+
+- `main axis` - The main axis of a flex container is the primary axis along which flex items are laid out. Not necessarily horizontal; it depends on the `flex-direction` property.
+
+- `main-start | main-end` - The flex items are placed within the container starting from `main-start` and going to `main-end`.
+
+- `main size` - The flex item’s main size property is either the ‘width’ or ‘height’ property, whichever is in the main dimension.
+
+- `cross axis` - The axis perpendicular to the main axis is called the cross axis. Its direction depends on the main axis direction.
+
+**Flexbox properties**
+
+![Flex-Properties](image-2.png)
+
+**Properties on Parent (Flex Container)**
+
+- `display` - Defines the flex container, as inline or block; depending on the given value.
+
+```css
+.container {
+  display: flex | inline-flex;
+}
 ```
+
+- `flex-direction` - Defines the main-axis, thus defining the direction flex items are placed in the flex container.
+
+![flex-direction-image](image-3.png)
+
+```css
+.container {
+  flex-direction: row | row-reverse | column | column-reverse;
+
+  /* row (default): left to right in ltr; right to left in rtl */
+  /* row-reverse: right to left in ltr; left to right in rtl */
+  /* column: same as row but top to bottom */
+  /* column-reverse: same as row-reverse but bottom to top */
+}
+```
+
+- `flex-wrap` - By default, flex items will all try to fit onto one line. You can change that and allow the items to wrap as needed.
+
+![flex-wrap-image](image-4.png)
+
+```css
+.container {
+  flex-wrap: nowrap | wrap | wrap-reverse;
+}
+
+/* nowrap (default): all flex items will be on one line */
+/* wrap: flex items will wrap onto multiple lines, from top to bottom. */ 
+/* wrap-reverse: flex items will wrap onto multiple lines from bottom to top. */
+```
+
+- `Justify-content` - Defines the alignment along the main axis. It helps distribute extra free space left over when either all the flex items on a line are inflexible, or are flexible but have reached their maximum size.
+
+![justify-content properties](image-5.png)
+
+```css
+.container {
+  justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly;
+}
+
+/* flex-start (default): items are packed toward the start of the flex-direction. */
+/* flex-end: items are packed toward the end of the flex-direction. */
+/* center: items are centered along the line. */
+/* space-between: items are evenly distributed in the line; first item is on the start line, last item on the end line. */
+/* space-around: items are evenly distributed in the line with equal space around them. */
+/* space-evenly: items are distributed so that the spacing between any two items (and the space to the edges) is equal. Truly evenly spaced. */
+```
+
+- `align-items` - Defines the default behavior for how flex items are laid out along the cross axis on the current line. Like justify-content version for the cross-axis.
+
+![align-items properties](image-6.png)
+
+```css
+.container {
+  align-items: stretch | flex-start | flex-end | center | baseline;
+}
+
+/* stretch (default): stretch to fill the container (still respect min-width/max-width) */
+/* flex-start / start / self-start: items are placed at the start of the cross axis. The difference between these is subtle, and is about respecting the flex-direction rules or the writing-mode rules. */
+/* flex-end / end / self-end: items are placed at the end of the cross axis. The difference again is subtle and is about respecting flex-direction rules vs. writing-mode rules. */
+/* center: items are centered in the cross-axis */
+/* baseline: items are aligned such as their baselines align */
+```
+
+- `align-content` - This aligns a flex container’s lines within when there is extra space in the cross-axis, similar to how justify-content aligns individual items within the main-axis.
+
+![align-content properties](image-7.png)
+
+```css
+.container {
+  align-content: flex-start | flex-end | center | space-between | space-around | stretch;
+}
+
+/* flex-start / start: items packed to the start of the container. The (more supported) flex-start honors the flex-direction while start honors the writing-mode direction. */
+/* flex-end / end: items packed to the end of the container. The (more support) flex-end honors the flex-direction while end honors the writing-mode direction. */
+/* center: items centered in the container */
+/* space-between: items evenly distributed; the first line is at the start of the container while the last one is at the end */
+/* space-around: items evenly distributed with equal space around each line */
+/* space-evenly: items are evenly distributed with equal space around them */
+/* stretch (default): lines stretch to take up the remaining space */
+```
+
+> <picture>
+>   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Mqxx/GitHub-Markdown/main/blockquotes/badge/light-theme/note.svg">
+>   <img alt="Note" src="https://raw.githubusercontent.com/Mqxx/GitHub-Markdown/main/blockquotes/badge/dark-theme/note.svg">
+> </picture><br>
+>
+> The `align-content` property has no effect on single line non-wrapped flex containers. It needs multiline lines with flex-wrap set to either wrap or wrap-reverse
+
+- `gap Property` - It controls the space between flex items. It applies that spacing only between items not on the outer edges. 
+
+![gap property](image-8.png)
 
 ```css
 .container {
   display: flex;
+  ...
+  gap: 10px;
+  gap: 10px 20px; /* row-gap column gap */
+  row-gap: 10px;
+  column-gap: 20px;
 }
 ```
 
-This will give as a block level box, with flex item children. These flex items will behave according to the initial values, which are;
+> It is not exclusively for flexbox, gap works in grid and multi-column layout as well.
 
-* Items display as a row, They do not wrap, They do not grow to fill the container, They line up at the start of the container.
+- `flex-flow` - This is a shorthand property for `flex-direction` and `flex-wrap` properties.
+
+```css
+.container {
+  flex-flow: <‘flex-direction’> || <‘flex-wrap’>;
+}
+```
+
+**Properties on Children (Flex Items)**
+
+- `Order` - By default, flex items are laid out in the source order. However, the order property controls the order in which they appear in the flex container.
+
+```css
+.item {
+  order: <integer>; /* default is 0 */
+}
+```
+
+> We can typically use the order property something like this:
+
+```css
+.container{
+  display: flex;
+  height: 300px;
+}
+
+.child1{
+  height: 100px;
+  width: 200px;
+  margin: auto;
+}
+
+div:nth-of-type(1){order: 3;} /* 1st element to appear 3rd */
+```
+
+- `flex-grow` - This defines the ability for a flex item to grow if necessary. It accepts a unit-less value that serves as a proportion. It dictates what amount of the available space inside the flex container the item should take.
+
+If all items in the container has `flex-grow` set to 1, the remaining space in the container will be distributed equally to all children. If one of the children has a value of 2, the remaining space would take up twice as much space as the others (if possible).
+
+![Flex-grow](image-9.png)
+
+```css
+.item {
+  flex-grow: <number>; /* default 0 */
+}
+```
+
+- `flex-shrink` - This defines the ability for a flex item to shrink if necessary.
+
+```css
+.item {
+  flex-shrink: <number>; /* default 1 */
+}
+```
+
+- `flex-basis` - This defines the default size of an element before the remaining space is distributed. It can be a length (e.g. 20%, 5rem, etc.) or a keyword. 
+
+```css
+.item {
+  flex-basis: <length> | auto; /* default auto */
+
+  /* available keywords: auto | content | max-content | min-content | fit-content */
+
+  /*auto - the browser looks at the width/height of the item */
+  /*content - size of the element’s content box */
+  /*max-content - size of the largest content */  
+  /*min-content - size of the smallest content */
+  /*fit-content - size of the content box minus margins */
+}
+``` 
+
+- `flex` - This is the shorthand for `flex-grow`, `flex-shrink` and `flex-basis` combined. The second and third parameters (flex-shrink and flex-basis) are optional. Default is 0 1 auto.
+
+```css
+.item {
+  flex: none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]
+}
+```
+
+- `align-self` - This allows the default alignment (or the one specified by align-items) to be overridden for individual flex items.
+
+![align-self property](image-10.png)
+
+```css
+.item {
+  align-self: auto | flex-start | flex-end | center | baseline | stretch;
+}
+```
+
+### Grid Layout
+
+CSS Grid Layout is a 2-Dimensional grid based layout system. It is a whole module and not a single property. Some of them are meant to be set on the container (parent element, known as “grid container”) whereas the others are meant to be set on the children (“grid items”). It is considered to be the most powerful layout system available in CSS.
+
+**Grid Terminologies**
+
+- **`Grid Container`** : The element on which `display: grid` is applied. It’s the direct parent of all the grid items.
+
+- **`Grid Item`** : The children (direct descendants) of the grid container.
+
+- **`Grid Line`** : The lines that makes up the structure of the grid. They can be either vertical (“column grid lines”) or horizontal (“row grid lines”) and reside on either side of a row or column.
+
+![Grid line example](image-11.png)
+
+- **`Grid Cell`** : The space between two adjacent row and two adjacent column grid lines. It’s a single “unit” of the grid.
+
+![Grid cell image](image-12.png)
+
+- **`Grid Track`** : The space between two adjacent grid lines. You can think of them like the columns or rows of the grid.
+
+![Grid track image](image-13.png)
+
+- **`Grid Area`** : The total space surrounded by four grid lines. A grid area may be comprised of any number of grid cells.
+
+![Grid area image](image-14.png)
+
+
+**Grid Properties**
+
+**Properties on Parent (Grid Container)**
+
+- `display` - Defines the element as a grid container and establishes a new grid formatting context for its contents.
+
+```css
+.container {
+  display: grid | inline-grid;
+  /* Other values: subgrid */
+}
+```
+
+- `grid-template-columns` - Defines the columns of the grid with a space-separated list of values. The values represent the track size, and the space between them represents the grid line.
+
+```css
+.container {
+  grid-template-columns: <track-size> ... | <line-name> <track-size> ...;
+  /* One value for each column */
+  /* <track-size> = <length> | <percentage> | <flex> | minmax(<min>, <max>) | fit-content(<length-percentage>) */
+  /* <line-name> = <custom-name> */
+}
+```
+
+- `grid-template-rows` - Defines the rows of the grid with a space-separated list of values. The values represent the track size, and the space between them represents the grid line.
+
+```css
+.container {
+  grid-template-rows: <track-size> ... | <line-name> <track-size> ...;
+  /* One value for each row */
+  /* <track-size> = <length> | <percentage> | <flex> | minmax(<min>, <max>) | fit-content(<length-percentage>) */
+  /* <line-name> = <custom-name> */
+}
+```
+
+- `grid-template-areas` - Defines a grid template by referencing the names of the grid areas which are specified with the grid-area property. Repeating the name of a grid area causes the content to span those cells. A period signifies an empty cell. The syntax itself provides a visualization of the structure of the grid.
+
+```css
+.container {
+  grid-template-areas: <grid-area-name> ... | <line-name> <grid-area-name> ...;
+  /* One value for each row */
+  /* <grid-area-name> = <custom-name> */
+  /* <line-name> = <custom-name> */
+}
+```
+
+- `grid-template` - A shorthand for setting `grid-template-rows`, `grid-template-columns`, and `grid-template-areas` in a single declaration.
+
+```css
+.container {
+  grid-template: none | <grid-template-rows> / <grid-template-columns> | <grid-template-areas>;
+}
+```
+
+- `grid-column-gap` - Specifies the size of the grid lines. You can think of it like setting the width of the gutters between the columns/rows.
+
+```css
+.container {
+  grid-column-gap: <line-size>;
+  /* <line-size> = <length> | <percentage> */
+}
+```
+
+- `grid-row-gap` - Specifies the size of the grid lines. You can think of it like setting the width of the gutters between the columns/rows.
+
+```css
+.container {
+  grid-row-gap: <line-size>;
+  /* <line-size> = <length> | <percentage> */
+}
+```
+
+- `grid-gap` - A shorthand for `grid-row-gap` and `grid-column-gap`.
+
+```css
+.container {
+  grid-gap: <grid-row-gap> <grid-column-gap>;
+}
+```
+
+- `justify-items` - Aligns grid items along the inline (row) axis (as opposed to align-items which aligns along the block (column) axis). This value applies to all grid items inside the container.
+
+```css
+.container {
+  justify-items: start | end | center | stretch;
+}
+```
+
+- `align-items` - Aligns grid items along the block (column) axis (as opposed to justify-items which aligns along the inline (row) axis). This value applies to all grid items inside the container.
+
+```css
+.container {
+  align-items: start | end | center | stretch;
+}
+```
+
+- `place-items` - A shorthand for align-items and justify-items.
+
+```css
+.container {
+  place-items: <align-items> <justify-items>;
+}
+```
+
+- `justify-content` - Aligns grid tracks along the inline (row) axis (as opposed to align-content which aligns along the block (column) axis). This value applies to all grid containers inside the parent.
+
+```css
+.container {
+  justify-content: start | end | center | stretch | space-around | space-between | space-evenly;
+}
+```
+
+- `align-content` - Aligns grid tracks along the block (column) axis (as opposed to justify-content which aligns along the inline (row) axis). This value applies to all grid containers inside the parent.
+
+```css
+.container {
+  align-content: start | end | center | stretch | space-around | space-between | space-evenly;
+}
+```
+
+- `place-content` - A shorthand for align-content and justify-content.
+
+```css
+.container {
+  place-content: <align-content> <justify-content>;
+}
+```
+
+- `grid-auto-columns` - Specifies the size of any auto-generated grid track. Auto-generated grid tracks are not the same as auto-placed tracks (which are created when grid items are placed outside of explicit grid tracks).
+
+```css
+.container {
+  grid-auto-columns: <track-size>;
+  /* <track-size> = <length> | <percentage> | <flex> | minmax(<min>, <max>) | fit-content(<length-percentage>) */
+}
+```
+
+- `grid-auto-rows` - Specifies the size of any auto-generated grid track. Auto-generated grid tracks are not the same as auto-placed tracks (which are created when grid items are placed outside of explicit grid tracks).
+
+```css
+.container {
+  grid-auto-rows: <track-size>;
+  /* <track-size> = <length> | <percentage> | <flex> | minmax(<min>, <max>) | fit-content(<length-percentage>) */
+}
+```
+
+- `grid-auto-flow` - Controls how auto-placed items are inserted in the grid. It has two values:
+
+  - `row` - Auto-placed items are inserted along the row axis at the start of the implicit grid.
+  - `column` - Auto-placed items are inserted along the column axis at the start of the implicit grid.
+
+```css
+.container {
+  grid-auto-flow: row | column | dense;
+}
+```
+
+- `grid` - A shorthand for setting `grid-template-rows`, `grid-template-columns`, `grid-template-areas`, `grid-auto-rows`, `grid-auto-columns`, and `grid-auto-flow` in a single declaration.
+
+```css
+.container {
+  grid: none | <grid-template-rows> / <grid-template-columns> | <grid-template-areas> | <grid-auto-flow> [ <grid-auto-rows> ] [ / <grid-auto-columns> ];
+}
+```
+
+**Properties on Children (Grid Items)**
+
+- `grid-column-start` - Specifies a grid item’s start position within the grid column by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the inline-start and inline-end edge of its grid area.
+
+```css
+.item {
+  grid-column-start: <number> | <name> | span <number> | span <name> | auto;
+}
+```
+
+- `grid-column-end` - Specifies a grid item’s end position within the grid column by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the inline-start and inline-end edge of its grid area.
+
+```css
+.item {
+  grid-column-end: <number> | <name> | span <number> | span <name> | auto;
+}
+```
+
+- `grid-row-start` - Specifies a grid item’s start position within the grid row by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the block-start and block-end edge of its grid area.
+
+```css
+.item {
+  grid-row-start: <number> | <name> | span <number> | span <name> | auto;
+}
+```
+
+- `grid-row-end` - Specifies a grid item’s end position within the grid row by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the block-start and block-end edge of its grid area.
+
+```css
+.item {
+  grid-row-end: <number> | <name> | span <number> | span <name> | auto;
+}
+```
+
+- `grid-column` - A shorthand for `grid-column-start` and `grid-column-end`.
+
+```css
+.item {
+  grid-column: <start-line> / <end-line> | <start-line> / span <value>;
+}
+```
+
+- `grid-row` - A shorthand for `grid-row-start` and `grid-row-end`.
+
+```css
+.item {
+  grid-row: <start-line> / <end-line> | <start-line> / span <value>;
+}
+```
+
+- `grid-area` - Either specifies a name for the grid item, or this property is a shorthand for the grid-row-start, grid-column-start, grid-row-end, and grid-column-end properties, specifying a grid item’s size and location within the grid row by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the edges of its grid area.
+
+```css
+.item {
+  grid-area: <name> | <row-start> / <column-start> / <row-end> / <column-end> | <row-start> / <column-start> / span <row-end> / span <column-end>;
+}
+```
+
+- `justify-self` - Aligns a grid item inside a cell along the inline (row) axis (as opposed to align-self which aligns along the block (column) axis). This value applies to a grid item inside a single cell.
+
+```css
+.item {
+  justify-self: start | end | center | stretch;
+}
+```
+
+- `align-self` - Aligns a grid item inside a cell along the block (column) axis (as opposed to justify-self which aligns along the inline (row) axis). This value applies to a grid item inside a single cell.
+
+```css
+.item {
+  align-self: start | end | center | stretch;
+}
+```
+
+- `place-self` - A shorthand for align-self and justify-self.
+
+```css
+.item {
+  place-self: <align-self> <justify-self>;
+}
+```
