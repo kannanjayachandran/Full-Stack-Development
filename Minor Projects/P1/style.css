@@ -1,0 +1,162 @@
+/* Global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+body {
+  background: rgb(242, 243, 242);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+/* Start */
+nav {
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+  background: rgb(73, 204, 248);
+}
+
+ul {
+  list-style: none;
+  flex: 1;
+  max-width: 50%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+h1 {
+  font-size: 6rem;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(1, 31, 50);
+  background-color: rgb(156, 234, 204);
+}
+
+p {
+  font-size: 2rem;
+  padding: 0.5rem;
+}
+
+footer {
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+  /* Center horizontally */
+  align-items: center;
+  background-color: azure;
+  height: 100px;
+}
+
+/* Media Query */
+
+@media screen and (min-width: 320px) {
+  body {
+    font-size: 100%;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: center;
+    font-size: 2rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    padding: 0.6rem 0;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  ul {
+    max-width: 100%;
+    padding: 0.5rem 0;
+
+  }
+
+  ul li {
+    padding: 0.6rem;
+  }
+
+  main p {
+    font-size: 2rem;
+  }
+
+  footer p {
+    font-size: 1.5rem;
+  }
+}
+
+
+@media (min-width: 768px) {
+
+  nav {
+    background: #088395;
+  }
+
+  h1 {
+    font-size: 4rem;
+    background: #B4B4B3;
+  }
+
+  main p {
+    font-size: 2rem;
+  }
+
+  footer {
+    background: #9D76C1;
+  }
+
+}
+
+/* Media Query for Min-Width: 1080px */
+@media screen and (min-width: 1080px) {
+
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  nav {
+    background: #82A0D8;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    min-height: 10vh;
+  }
+
+  h1 {
+    font-size: 4rem;
+    background: #ECEE81;
+    min-height: 20vh;
+  }
+
+  main p {
+    font-size: 2rem;
+  }
+
+  footer {
+    background: #8DDFCB;
+  }
+}
