@@ -1,33 +1,33 @@
 # HTTP Protocol 📃
 
-HTTP or Hypertext Transfer Protocol is a protocol that is used to transfer `hypermedia` across the web. It is a `stateless` protocol which means that the server does not remember the previous requests. We can use `cookies` to create sessions and thus make state. 
+The **`Hypertext Transfer Protocol`** (HTTP) is an _application-layer_ protocol used for communication between _clients_ (such as web browsers) and _servers_ (such as web servers). It is the foundation of data communication on the World Wide Web. HTTP is designed to facilitate the transfer of various types of data, primarily hypertext documents, which are commonly displayed as web pages in web browsers.
 
-The `client` initiates the request and the `server` responds to it. Data is sent in the form of `text` and is `connection less`. It uses `TCP` as the transport layer protocol and uses port `80` by default.
+HTTP follows a _client-server architecture_ and is _stateless_.
 
 ## HTTP Request 📃
 
-`HTTP` request are simply a way to ask for data from the server. The request consists of three parts: `method`, `path` and `protocol`. `method` is used to specify the type of request. `path` is used to specify the location of the resource on the server. `protocol` is used to specify the version of the protocol used.
+`HTTP` request are simply a way to ask for data from the server. The request consists of three parts: `method`, `path` and `protocol`. `method` is used to specify the type of request. `path` is used to specify the location of the resource on the server. `protocol` is used to specify the version of the protocol used. The request can also contain `headers` (to send additional information) and `body` (to send the data). HTTP methods are;
 
 ### GET
 
 ```http
-GET /amazon/mobiles HTTP/1.1
+GET /example/electronics/mobiles HTTP/1.1
 ```
 
-`GET` is the `method` of the request. It is used to retrieve data from the server. `/amazon/mobiles` is the `path` of the request. It is the location of the resource on the server. `HTTP/1.1` is the `protocol` of the request. It is the version of the protocol used.
+`GET` is the `method` of the request. It is used to retrieve data from the server. `/example/electronics/mobiles` is the `path` of the request. It is the location of the resource on the server. `HTTP/1.1` is the `protocol` of the request. It is the version of the protocol used.
 
 ```http
-HOST: www.amazon.com
+HOST: www.example.com
 Accept: text/html
-``` 
+```
 
-These are known as `headers`. They are used to send additional information about the request. 
+> `headers`.
 
 ### POST
 
 ```http
 POST /Submit HTTP/1.1
-HOST: www.amazon.com
+HOST: www.example.com
 Accept: text/html
 Content-Type: application/Json
 {
@@ -46,7 +46,7 @@ Content-Type: text/html
 
 <html>
     <head>
-        <title>Amazon</title>
+        <title>Example</title>
     </head>
     <body>
         <h1>Mobiles</h1>
@@ -68,60 +68,53 @@ Content-Type: text/html
 - `HEAD` is used to get the headers of a resource.
 - `OPTIONS` is used to get the supported methods of a resource.
 
-## HTTP Status Codes 
+## HTTP Status Codes
 
-|sl.no|Status Code|Description|
-|---|---|---|
-|1|1xx|Informational|
-|2|2xx|Success|
-|3|3xx|Redirection|
-|4|4xx|Client Error|
+| sl.no | Status Code | Description   |
+| ----- | ----------- | ------------- |
+| 1     | 1xx         | Informational |
+| 2     | 2xx         | Success       |
+| 3     | 3xx         | Redirection   |
+| 4     | 4xx         | Client Error  |
 
 ### 2xx Success
 
-|sl.no|Status Code|Description|
-|---|---|---|
-|1|200|OK|
-|2|201|Created|
-|3|202|Accepted|
-|4|203|Non-Authoritative Information|
-|5|204|No Content|
-|6|205|Reset Content|
-|7|206|Partial Content|
+| sl.no | Status Code | Description                   |
+| ----- | ----------- | ----------------------------- |
+| 1     | 200         | OK                            |
+| 2     | 201         | Created                       |
+| 3     | 202         | Accepted                      |
+| 4     | 203         | Non-Authoritative Information |
+| 5     | 204         | No Content                    |
 
 ### 4xx Client Error
 
-|sl.no|Status Code|Description|
-|---|---|---|
-|1|400|Bad Request|
-|2|401|Unauthorized|
-|3|402|Payment Required|
-|4|403|Forbidden|
-|5|404|Not Found|
-|6|405|Method Not Allowed|
-|26|429|Too Many Requests|
-|27|431|Request Header Fields Too Large|
-|28|451|Unavailable For Legal Reasons|
+| sl.no | Status Code | Description       |
+| ----- | ----------- | ----------------- |
+| 1     | 400         | Bad Request       |
+| 2     | 401         | Unauthorized      |
+| 3     | 402         | Payment Required  |
+| 4     | 403         | Forbidden         |
+| 5     | 404         | Not Found         |
+| 6     | 429         | Too Many Requests |
 
 ### 5xx Server Error
 
-|sl.no|Status Code|Description|
-|---|---|---|
-|1|500|Internal Server Error|
-|2|501|Not Implemented|
-|3|502|Bad Gateway|
-|4|503|Service Unavailable|
-|5|504|Gateway Timeout|
-|6|505|HTTP Version Not Supported|
-|7|506|Variant Also Negotiates|
-|8|507|Insufficient Storage|
-|9|508|Loop Detected|
+| sl.no | Status Code | Description                |
+| ----- | ----------- | -------------------------- |
+| 1     | 500         | Internal Server Error      |
+| 2     | 501         | Not Implemented            |
+| 3     | 502         | Bad Gateway                |
+| 4     | 503         | Service Unavailable        |
+| 5     | 504         | Gateway Timeout            |
+| 6     | 505         | HTTP Version Not Supported |
+| 7     | 507         | Insufficient Storage       |
 
-- Most common ones are 200, 201, 301, 302, 400, 401, 403, 404, 500, 501, 503
+- Most common ones are `200, 201, 301, 302, 400, 401, 403, 404, 500, 501, 503`
 
 ## Cookies 🍪
 
-We use the `set-cookie` header to set cookies. The `cookie` header is used to send the cookies to the server. 
+We use the `set-cookie` header to set cookies. The `cookie` header is used to send the cookies to the server.
 
 ## HTTPS
 

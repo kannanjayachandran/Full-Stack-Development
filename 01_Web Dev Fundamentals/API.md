@@ -1,8 +1,4 @@
-<div align="center">
-
-# API ~ Application Programming Interface 🧩
-
-</div>
+<h1 align="center"> API ~ Application Programming Interface 🧩 </h1>
 
 An API is simply a way in which two programs are able to communicate with each other. There are many types of API's. Whenever we want to talk with the server we use an API. There are many types of API's. Some of them are;
 
@@ -10,9 +6,9 @@ An API is simply a way in which two programs are able to communicate with each o
 
 A web API is a way in which two programs are able to communicate with each other over the internet. The two programs are usually a client and a server.
 
-### RESTful API's 
+### RESTful API's
 
-REST stands for Representational State Transfer. It is a set of rules that are used to create API's. It is basically an architecture to create API's. With REST we would be working with resources. At the core REST is based on what we call `Architectural Constraints`. These are the rules that we need to follow to create a RESTful API. They are;
+REST stands for **Representational State Transfer**. It is a set of rules that are used to create API's. It is basically an architecture to create API's. With REST we would be working with resources. At the core REST is based on what we call `Architectural Constraints`. These are the rules that we need to follow to create a RESTful API. They are;
 
 - Client-Server : Must follow client-server model.
 
@@ -37,4 +33,4 @@ SOAP stands for Simple Object Access protocol. It uses `XML` to transfer data. I
 
 ### GraphQL API's
 
-GraphQL is a query language for APIs and a runtime for fulfilling those queries with your existing data. It would only return the essential data that is needed. 
+GraphQL is a query language for APIs and a runtime for fulfilling those queries with your existing data. It would only return the essential data that is needed.
