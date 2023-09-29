@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <title>Web-3 Bootcamp</title>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 fixed-top">
+        <div class="container">
+            <a href="#" class="navbar-brand">Web-3 Bootcamp</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a href="#learn" class="nav-link">Curriculum</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#questions" class="nav-link">Questions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#instructors" class="nav-link">Instructors</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Showcase area -->
+    <section class="bg-dark text-light p-5 p-lg-1 pt-lg-5 text-center text-sm-start">
+        <div class="container">
+            <div class="d-sm-flex align-items-center justify-content-between">
+                <div>
+                    <h1>Become a <span class="text-warning">Web-3 Developer</span></h1>
+                    <p class="lead my-4">Elevate your skills in Web 3 technologies with us. Join Web-3 Bootcamp for
+                        expert-led learning
+                        and hands-on experience</p>
+                    <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal"
+                        data-bs-target="#enrollModal">Explore The Course</button>
+
+                </div>
+
+                <img class="img-fluid w-50 d-none d-sm-block" src="./img/First_showcase.svg" alt="">
+            </div>
+        </div>
+    </section>
+
+
+    <!-- modal  -->
+    <div class="modal fade" id="enrollModal" tabindex="-1" role="dialog" aria-labelledby="enrollModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ModalLabel">Join fast</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p class="lead">Fill out this form to join</p>
+                    <form>
+                        <div class="mb-3">
+                            <label for="first-name" class="col-form-label">First Name</label>
+                            <input type="text" class="form-control" id="first-name">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="last-name" class="col-form-label">Last Name:</label>
+                            <input type="text" class="form-control" id="first-name">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="Email" class="col-form-label">Email:</label>
+                            <input type="text" class="form-control" id="first-name">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="phone" class="col-form-label">Phone:</label>
+                            <input type="text" class="form-control" id="first-name">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Newsletter -->
+    <section class="bg-primary text-white p-5">
+        <div class="container">
+            <div class="d-md-flex align-items-center justify-content-between">
+                <h3 class="mb-3 mb-md-0">Subscribe to our newsletter</h3>
+
+                <div class="input-group letter-input">
+                    <input type="text" class="form-control" placeholder="Email address" aria-label="Enter Email address"
+                        aria-describedby="button-addon2" />
+                    <button class="btn btn-dark btn-lg" type="button">Subscribe</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Boxes -->
+    <section id="learn" class="p-5">
+        <div class="container">
+            <div class="row text-center g-4">
+                <div class="col-md">
+                    <div class="card bg-dark text-white">
+                        <div class="card-body text-center">
+                            <div class="h1 mb-3">
+                                <i class="bi bi-laptop"></i>
+                            </div>
+                            <h3 class="card-title mb-3 ">Foundations of Web 3.0</h3>
+                            <p class="card-text">Unlock the basics: Dive into
+                                blockchain
+                                technology, smart contracts,
+                                and decentralized applications to build a strong Web 3 foundation.</p>
+                            <a href="#" class="btn btn-primary">Read more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="card bg-secondary text-white">
+                        <div class="card-body text-center">
+                            <div class="h1 mb-3">
+                                <i class="bi bi-cpu"></i>
+                            </div>
+                            <h3 class="card-title mb-3">Advanced Development</h3>
+                            <p class="card-text">Master the tech: Explore Ethereum, Polkadot, and more. Develop
+                                decentralized apps and smart contracts for real-world use cases.</p>
+                            <a href="#" class="btn btn-dark">Read more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="card bg-dark text-white">
+                        <div class="card-body text-center">
+                            <div class="h1 mb-3">
+                                <i class="bi bi-people"></i>
+                            </div>
+                            <h3 class="card-title mb-3">NFTs and Beyond</h3>
+                            <p class="card-text">Beyond the buzz: Learn how to create, trade, and utilize NFTs
+                                effectively. Explore the limitless possibilities of non-fungible tokens in Web 3.0.</p>
+                            <a href="#" class="btn btn-primary">Read more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Learn section  -->
+    <section class="p-5">
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-md">
+                    <img src="./img/learn_section.svg" class="img-fluid" alt="A decentralized Web-3 Network">
+                </div>
+                <div class="col-md p-5">
+                    <h2>Learn the fundamentals</h2>
+                    <p class="lead">Discover the essential building blocks of Web 3.0 in this comprehensive course.
+                        Master blockchain, smart contracts, and decentralized applications.</p>
+                    <p>Delve deeper into Web 3.0's core concepts. Gain expertise in blockchain's inner workings, create
+                        robust smart contracts, and develop innovative decentralized applications.</p>
+
+                    <a href="#" class="btn btn-primary mt-3">
+                        <i class="bi bi-chevron-right"></i> Read More
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="learn" class="p-5 bg-dark text-light">
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+
+                <div class="col-md p-5">
+                    <h2>Create dApps</h2>
+                    <p class="lead">Unleash your creativity in the world of Web 3.0. Learn to design, code, and deploy
+                        decentralized applications (DApps) that shape the future of technology.</p>
+                    <p>Unlock the potential of decentralized applications. Gain hands-on experience and create DApps
+                        that disrupt industries and revolutionize the digital landscape.</p>
+
+                    <a href="#" class="btn btn-light mt-3">
+                        <i class="bi bi-chevron-right"></i> Read More
+                    </a>
+                </div>
+
+                <div class="col-md">
+                    <img src="./img/leaning_with_bitCoino.svg" class="img-fluid" alt="A decentralized Web-3 Network">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Frequently asked questions -->
+    <section id="questions" class="p-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Frequently Asked Questions</h2>
+
+            <div class="accordion accordion-flush" id="questions">
+                <!-- Item -1  -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#question-one" aria-expanded="false" aria-controls="question-one">
+                            Programs
+                        </button>
+                    </h2>
+                    <div id="question-one" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+                        data-bs-parent="#questions">
+                        <div class="accordion-body">
+                            <h3>Web 3.0 Essentials</h3>
+                            <p>Start your Web 3.0 journey with essential skills in blockchain, smart contracts, and
+                                decentralized applications.</p>
+                            <h3>Web 3.0 Mastery</h3>
+                            <p>Master the intricacies of Web 3.0. Develop advanced decentralized applications and
+                                explore blockchain innovation.</p>
+                            <h3>Web 3.0 Pioneer</h3>
+                            <p> Join the forefront of Web 3.0 technology. Innovate, lead, and shape the future of
+                                blockchain and decentralization.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Item - 2  -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#question-two" aria-expanded="false" aria-controls="question-two">
+                            Who should join
+                        </button>
+                    </h2>
+                    <div id="question-two" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+                        data-bs-parent="#questions">
+                        <div class="accordion-body"> Any one who is interested in learning Web-3 technologies can join
+                            this course.
+                        </div>
+                    </div>
+                </div>
+                <!-- Item - 3  -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#question-three" aria-expanded="false" aria-controls="question-three">
+                            Prerequisites to join
+                        </button>
+                    </h2>
+                    <div id="question-three" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+                        data-bs-parent="#questions">
+                        <div class="accordion-body"> Nothing much is required. Just a laptop and a good internet
+                            connection.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instructors -->
+    <section id="instructors" class="p-5 bg-primary">
+        <div class="container">
+            <h2 class="text-center text-white">
+                Our Instructors
+            </h2>
+            <p class="lead text-center text-white mb-5">
+                All our instructors have 10+ years of experience in Web-3 and 5+ years of experience in teaching
+            </p>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="card bg-light">
+                        <div class="card-body text-center">
+                            <img src="https://randomuser.me/api/portraits/men/3.jpg" class="rounded-circle mb-3" alt="">
+                            <h3 class="card-title mb-3">John Doe</h3>
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti
+                                veniam aperiam temporibus esse. Explicabo, quae.</p>
+                            <a href="#"><i class="bi bi-twitter text-dark mx-1"></i></a>
+                            <a href="#"><i class="bi bi-instagram text-dark mx-1"></i></a>
+                            <a href="#"><i class="bi bi-github text-dark mx-1"></i></a>
+                            <a href="#"><i class="bi bi-linkedin text-dark mx-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="card bg-light">
+                        <div class="card-body text-center">
+                            <img src="https://randomuser.me/api/portraits/men/9.jpg" class="rounded-circle mb-3" alt="">
+                            <h3 class="card-title mb-3">Steven Sl</h3>
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti
+                                veniam aperiam temporibus esse. Explicabo, quae.</p>
+                            <a href="#"><i class="bi bi-twitter text-dark mx-1"></i></a>
+                            <a href="#"><i class="bi bi-instagram text-dark mx-1"></i></a>
+                            <a href="#"><i class="bi bi-github text-dark mx-1"></i></a>
+                            <a href="#"><i class="bi bi-linkedin text-dark mx-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="card bg-light">
+                        <div class="card-body text-center">
+                            <img src="https://randomuser.me/api/portraits/men/34.jpg" class="rounded-circle mb-3"
+                                alt="">
+                            <h3 class="card-title mb-3">Dr. Doom</h3>
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti
+                                veniam aperiam temporibus esse. Explicabo, quae.</p>
+                            <a href="#"><i class="bi bi-twitter text-dark mx-1"></i></a>
+                            <a href="#"><i class="bi bi-instagram text-dark mx-1"></i></a>
+                            <a href="#"><i class="bi bi-github text-dark mx-1"></i></a>
+                            <a href="#"><i class="bi bi-linkedin text-dark mx-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="card bg-light">
+                        <div class="card-body text-center">
+                            <img src="https://randomuser.me/api/portraits/men/50.jpg" class="rounded-circle mb-3"
+                                alt="">
+                            <h3 class="card-title mb-3">Charles Xavier</h3>
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti
+                                veniam aperiam temporibus esse. Explicabo, quae.</p>
+                            <a href="#"><i class="bi bi-twitter text-dark mx-1"></i></a>
+                            <a href="#"><i class="bi bi-instagram text-dark mx-1"></i></a>
+                            <a href="#"><i class="bi bi-github text-dark mx-1"></i></a>
+                            <a href="#"><i class="bi bi-linkedin text-dark mx-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact section -->
+    <section class="p-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md">
+                    <h2 class="text-center mb-4">Contact Info</h2>
+                    <ul class="list-group group-flush lead">
+                        <li class="list-group-item">
+                            <span class="fw-bold">Head office : </span> somewhere on the Internet
+                        </li>
+                        <li class="list-group-item">
+                            <span class="fw-bold">Enrolment phone : </span> 999-888-777-6
+                        </li>
+                        <li class="list-group-item">
+                            <span class="fw-bold">Enrolment Email : </span> mail1@gmail.com
+                        </li>
+                        <li class="list-group-item">
+                            <span class="fw-bold">Student Email : </span> mail2@gmail.com
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md">
+                    <div class="container d-flex align-items-center">
+                        <img src="./img/learn1.svg" class="img-fluid" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <section class="p-3 bg-dark text-center position-relative text-white">
+
+        <div class="container">
+            <p class="lead">Copyright &copy;2023 Web-3 Bootcamp</p>
+
+            <a href="#" class="position-absolute bottom-0 end-0 p-3">
+                <i class="bi bi-arrow-up circle h1"></i>
+            </a>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+        </script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+/* Adding ghost element to avoid clipping of first image due to fixed navbar  */
+body::before {
+    display: block;
+    content: "";
+    height: 60px;
+}
+
+@media (min-width: 768px) {
+    .letter-input {
+        width: 45%;
+    }
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+a.navbar-brand {
+    font-family: 'Pacifico', cursive;
+    font-size: 1.1rem;
+}
+
+
+.btn-primary:hover {
+    background-color: #FFC107;
+    color: black;
+    border-color: #FFC107;
+}
