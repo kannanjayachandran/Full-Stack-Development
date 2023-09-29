@@ -6,4 +6,4 @@
 
 3. Modern responsive construction website [Link](https://kannanjayachandran.github.io/construction-website/)
 
-4. Responsive web-3 course page using Bootstrap[Link](https://kannanjayachandran.github.io/Web-3-EdTech-page/) 
+4. Responsive web-3 course page using Bootstrap [Link](https://kannanjayachandran.github.io/Web-3-EdTech-page/) 
