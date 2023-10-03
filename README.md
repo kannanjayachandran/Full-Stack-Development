@@ -19,10 +19,10 @@
 |  3.   | CSS                             |                [Link](./2_FrontEnd/2_CSS/Readme.md)                |
 |  4.   | JavaScript                      |                [Link](./3_Javascript/)                 |
 |  5.   | React JS                        |               [Link](./2_FrontEnd/3_REACT/Readme.md)               |
-|  6.   | Node JS                         |              [Link](./4_BackEnd/1_Server/1_NODE_JS/Readme.md)              |
-|  7.   | Express JS                      |            [Link](./4_BackEnd/1_Server/2_EXPRESS_JS/Readme.md)             |
-|  8.   | MongoDB                         |             [Link](./4_BackEnd/2_Database/2_MONGO_DB/Readme.md)              |
-|  9.   | Typescript                      |                [Link](./5_Typescript/Readme.md)                 |
+|  6.   | Node JS                         |              [Link](./4_BackEnd/1_Server/1_NODE_JS/)              |
+|  7.   | Express JS                      |            [Link](./4_BackEnd/1_Server/2_EXPRESS_JS/)             |
+|  8.   | MongoDB                         |             [Link](./4_BackEnd/2_Database/2_MONGO_DB/)              |
+|  9.   | Typescript                      |                [Link](./5_Typescript/)                 |
 
 > <picture>
 >   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Mqxx/GitHub-Markdown/main/blockquotes/badge/light-theme/warning.svg">
