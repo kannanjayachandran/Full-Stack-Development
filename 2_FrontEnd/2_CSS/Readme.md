@@ -678,7 +678,9 @@ If all items in the container has `flex-grow` set to 1, the remaining space in t
 
 ### Grid Layout
 
-CSS Grid Layout is a 2-Dimensional grid based layout system. It is a whole module and not a single property. Some of them are meant to be set on the container (parent element, known as “grid container”) whereas the others are meant to be set on the children (“grid items”). It is considered to be the most powerful layout system available in CSS.
+CSS Grid Layout is a 2-Dimensional grid based layout system. It is a whole module and not a single property and is considered to be the most powerful layout system available in CSS.
+
+> Often we use flexbox and grid layout to create modern layout systems. And below, I will be defining some concepts of grid layout by comparing it with flexbox.
 
 **Grid Terminologies**
 
@@ -705,14 +707,13 @@ CSS Grid Layout is a 2-Dimensional grid based layout system. It is a whole modul
 
 **Grid Properties**
 
-**Properties on Parent (Grid Container)**
+![Grid properties list](image-15.png)
 
-- `display` - Defines the element as a grid container and establishes a new grid formatting context for its contents.
+First thing set the display property of the parent/container to grid.
 
 ```css
 .container {
-  display: grid | inline-grid;
-  /* Other values: subgrid */
+  display: grid;
 }
 ```
 
@@ -720,23 +721,117 @@ CSS Grid Layout is a 2-Dimensional grid based layout system. It is a whole modul
 
 ```css
 .container {
-  grid-template-columns: <track-size> ... | <line-name> <track-size> ...;
-  /* One value for each column */
-  /* <track-size> = <length> | <percentage> | <flex> | minmax(<min>, <max>) | fit-content(<length-percentage>) */
-  /* <line-name> = <custom-name> */
+  grid-template-columns: 100px 200px 100px;
+  /* This would give a 3 column layout with specified width. */
+  /* We generally use fractional units to define the width of the columns. */
+  grid-template-columns: 1fr 2fr 1fr;
+  /* We can also use the repeat function to repeat the same value. */
+  grid-template-columns: repeat(3, 1fr);
 }
 ```
 
-- `grid-template-rows` - Defines the rows of the grid with a space-separated list of values. The values represent the track size, and the space between them represents the grid line.
+- `column-gap` - Specifies the size of the grid lines. You can think of it like setting the width of the gutters between the columns/rows.
+`row-gap` is the same as `column-gap` but for rows.
 
 ```css
 .container {
-  grid-template-rows: <track-size> ... | <line-name> <track-size> ...;
-  /* One value for each row */
-  /* <track-size> = <length> | <percentage> | <flex> | minmax(<min>, <max>) | fit-content(<length-percentage>) */
-  /* <line-name> = <custom-name> */
+  column-gap: 10px;
+  row-gap: 10px;
+  /* We can also use the gap property to set both column-gap and row-gap. */
+  gap: 10px;
 }
 ```
+> ![gap-property](image-16.png)
+
+With the above styling, all the columns would have the size of the content inside them. 
+>![grid-size](image-17.png)
+
+We can set the size of all the grid, regardless of the content inside them by,
+```css
+grid-auto-rows: 200px;
+```
+> ![grid propery](image-18.png)
+
+We can use the `minmax` function to set the minimum and maximum size of the columns.
+```css
+grid-auto-rows: minmax(100px, auto);
+```
+> ![min-max property](image-19.png)
+
+- `grid-template-rows` - Defines the rows of the grid. Same as `grid-template-columns` but for rows.
+
+```css
+.container {
+  grid-template-rows: 200px 100px 200px;
+}
+```
+>![grid-row](image-20.png)
+
+- `align-items` - It aligns the content inside the _grid cell_. Base value is `stretch`.
+
+```css
+.container {
+  align-items: start | end | center | stretch;
+}
+```
+
+```css
+align-items: start;
+```
+> ![align-items](image-21.png) 
+
+- `justify-content` - It aligns the container along the main axis.
+
+```css
+.container {
+  justify-content: start | end | center | stretch | space-around | space-between | space-evenly;
+}
+```
+- `align-self` and `justify-self` - It aligns the content inside the _grid cell_. Base value is `stretch`.
+
+```css
+/* let's say each div has a class of item */
+.item:nth-of-type(2) {
+  height: 100px;
+  width: 100px;
+
+  align-self: center;
+  justify-self: center;
+}
+```
+>![align-self and justify-self](image-22.png)
+
+- `grid-column` Span - We can decide the number of columns a grid item should span using the `grid-column` property.
+
+```css
+.item:nth-of-type(1) {
+  background: black;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  /* or using the shorthand */
+  grid-column: 1 / 3;
+  /* Instead of hardcoding the number of columns, we can use the span keyword. */
+  grid-column: 1 / span 2;
+  /* Which means start from the first column and span 2 columns. */
+}
+```
+- `grid-row` Span - We can decide the number of rows a grid item should span using the `grid-row` property.
+
+```css
+.item:nth-of-type(3) {
+  background: grey;
+  grid-row: 2 / span 2;
+}
+```
+![grid-row and grid-column](image-23.png)
+
+
+
+
+
+
+
+
 
 - `grid-template-areas` - Defines a grid template by referencing the names of the grid areas which are specified with the grid-area property. Repeating the name of a grid area causes the content to span those cells. A period signifies an empty cell. The syntax itself provides a visualization of the structure of the grid.
 
@@ -757,31 +852,9 @@ CSS Grid Layout is a 2-Dimensional grid based layout system. It is a whole modul
 }
 ```
 
-- `grid-column-gap` - Specifies the size of the grid lines. You can think of it like setting the width of the gutters between the columns/rows.
 
-```css
-.container {
-  grid-column-gap: <line-size>;
-  /* <line-size> = <length> | <percentage> */
-}
-```
 
-- `grid-row-gap` - Specifies the size of the grid lines. You can think of it like setting the width of the gutters between the columns/rows.
 
-```css
-.container {
-  grid-row-gap: <line-size>;
-  /* <line-size> = <length> | <percentage> */
-}
-```
-
-- `grid-gap` - A shorthand for `grid-row-gap` and `grid-column-gap`.
-
-```css
-.container {
-  grid-gap: <grid-row-gap> <grid-column-gap>;
-}
-```
 
 - `justify-items` - Aligns grid items along the inline (row) axis (as opposed to align-items which aligns along the block (column) axis). This value applies to all grid items inside the container.
 
@@ -791,35 +864,11 @@ CSS Grid Layout is a 2-Dimensional grid based layout system. It is a whole modul
 }
 ```
 
-- `align-items` - Aligns grid items along the block (column) axis (as opposed to justify-items which aligns along the inline (row) axis). This value applies to all grid items inside the container.
-
-```css
-.container {
-  align-items: start | end | center | stretch;
-}
-```
-
 - `place-items` - A shorthand for align-items and justify-items.
 
 ```css
 .container {
   place-items: <align-items> <justify-items>;
-}
-```
-
-- `justify-content` - Aligns grid tracks along the inline (row) axis (as opposed to align-content which aligns along the block (column) axis). This value applies to all grid containers inside the parent.
-
-```css
-.container {
-  justify-content: start | end | center | stretch | space-around | space-between | space-evenly;
-}
-```
-
-- `align-content` - Aligns grid tracks along the block (column) axis (as opposed to justify-content which aligns along the inline (row) axis). This value applies to all grid containers inside the parent.
-
-```css
-.container {
-  align-content: start | end | center | stretch | space-around | space-between | space-evenly;
 }
 ```
 
@@ -865,40 +914,6 @@ CSS Grid Layout is a 2-Dimensional grid based layout system. It is a whole modul
 ```css
 .container {
   grid: none | <grid-template-rows> / <grid-template-columns> | <grid-template-areas> | <grid-auto-flow> [ <grid-auto-rows> ] [ / <grid-auto-columns> ];
-}
-```
-
-**Properties on Children (Grid Items)**
-
-- `grid-column-start` - Specifies a grid item’s start position within the grid column by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the inline-start and inline-end edge of its grid area.
-
-```css
-.item {
-  grid-column-start: <number> | <name> | span <number> | span <name> | auto;
-}
-```
-
-- `grid-column-end` - Specifies a grid item’s end position within the grid column by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the inline-start and inline-end edge of its grid area.
-
-```css
-.item {
-  grid-column-end: <number> | <name> | span <number> | span <name> | auto;
-}
-```
-
-- `grid-row-start` - Specifies a grid item’s start position within the grid row by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the block-start and block-end edge of its grid area.
-
-```css
-.item {
-  grid-row-start: <number> | <name> | span <number> | span <name> | auto;
-}
-```
-
-- `grid-row-end` - Specifies a grid item’s end position within the grid row by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the block-start and block-end edge of its grid area.
-
-```css
-.item {
-  grid-row-end: <number> | <name> | span <number> | span <name> | auto;
 }
 ```
 
