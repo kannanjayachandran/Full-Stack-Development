@@ -316,7 +316,6 @@ search engine robots should index the page and follow links on the page.
 
 <meta name="description" content="..." />: This tag specifies a description of the website that may be used by search engines to display information about the page.
 ```
-
 ## Document Object Model
 
 The **Document Object Model** (DOM) is a programming interface for web documents. It represents the page so that programs can change the document structure, style, and content. Essentially, it creates a structured representation of the HTML page that can be manipulated with programming languages such as JavaScript.
