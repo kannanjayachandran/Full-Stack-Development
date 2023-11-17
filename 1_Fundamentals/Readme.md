@@ -6,7 +6,7 @@ We use almost all programming languages, technologies, and frameworks to build w
 
 | Topic:                                       | Link                        |
 | -------------------------------------------- | --------------------------- |
-| **Introduction -** Web-lifecycle             | [Read](./Life_Cycle.md)     |
+| **Introduction**                             | [Read](./Life_Cycle.md)     |
 | **HTTP**, How computers talk to each other.  | [Read](./HTTP.md)           |
 | **APIs**, How to communicate with the server | [Read](./API.md)            |
 | **Web Security**, How secured is your data   | [Read](./Web_Security.md)   |

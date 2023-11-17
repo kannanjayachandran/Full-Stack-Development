@@ -1,10 +1,10 @@
-# HTTP Protocol 📃
+# HTTP Protocol
 
-The **`Hypertext Transfer Protocol`** (HTTP) is an _application-layer_ protocol used for communication between _clients_ (such as web browsers) and _servers_ (such as web servers). It is the foundation of data communication on the World Wide Web. HTTP is designed to facilitate the transfer of various types of data, primarily hypertext documents, which are commonly displayed as web pages in web browsers.
+The **Hypertext Transfer Protocol** (*HTTP*) is an _application-layer_ protocol used for communication between client and server. It is the foundation of data communication on the World Wide Web. It is designed to facilitate the transfer of various types of data, primarily hypertext documents.
 
-HTTP follows a _client-server architecture_ and is _stateless_.
+HTTP follows a __client-server architecture__ and is __stateless__.
 
-## HTTP Request 📃
+## HTTP Request
 
 `HTTP` request are simply a way to ask for data from the server. The request consists of three parts: `method`, `path` and `protocol`. `method` is used to specify the type of request. `path` is used to specify the location of the resource on the server. `protocol` is used to specify the version of the protocol used. The request can also contain `headers` (to send additional information) and `body` (to send the data). HTTP methods are;
 
@@ -15,13 +15,6 @@ GET /example/electronics/mobiles HTTP/1.1
 ```
 
 `GET` is the `method` of the request. It is used to retrieve data from the server. `/example/electronics/mobiles` is the `path` of the request. It is the location of the resource on the server. `HTTP/1.1` is the `protocol` of the request. It is the version of the protocol used.
-
-```http
-HOST: www.example.com
-Accept: text/html
-```
-
-> `headers`.
 
 ### POST
 
@@ -60,7 +53,7 @@ Content-Type: text/html
 
 ```
 
-## Other HTTP Methods 📌
+## Other HTTP Methods
 
 - `PUT` is used to update a resource.
 - `DELETE` is used to delete a resource.
@@ -112,7 +105,7 @@ Content-Type: text/html
 
 - Most common ones are `200, 201, 301, 302, 400, 401, 403, 404, 500, 501, 503`
 
-## Cookies 🍪
+## Cookies
 
 We use the `set-cookie` header to set cookies. The `cookie` header is used to send the cookies to the server.
 
@@ -121,8 +114,11 @@ We use the `set-cookie` header to set cookies. The `cookie` header is used to se
 HTTPS is the secure version of HTTP. It uses `SSL` or `TLS` to encrypt the data. It uses port 443. A high level overview of how HTTPS works is given below.
 
 - While the client and the server communicates; the server sends `public key` + `certificate` to the client.
+
 - The client would then verify the certificate and create a `session key`, which is used to encrypt the data throughout the session.
+
 - The client would then encrypt the session key using the public key and send it to the server.
-- The server would then decrypt the session key using the private key and use it to decrypt the data.
+
+- The server would then decrypt the session key using the server's private key and use it to decrypt the data.
 
 > More on **APIs** [How to communicate with the server](./API.md)
