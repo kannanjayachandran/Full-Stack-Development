@@ -1,14 +1,12 @@
-<h1 align="center"> API ~ Application Programming Interface 🧩 </h1>
+<h1 align="center"> Application Programming Interface (API) </h1>
 
-An API is simply a way in which two programs are able to communicate with each other. There are many types of API's. Whenever we want to talk with the server we use an API. There are many types of API's. Some of them are;
+An API is simply a way in which two applications communicate with each other. We can think of it as a contract of service between two applications. The API defines how one application can request data from another application and how the other application will respond to that request.
 
-## Web API 🌐
-
-A web API is a way in which two programs are able to communicate with each other over the internet. The two programs are usually a client and a server.
+There are different ways API's can be implemented. Some of them are;
 
 ### RESTful API's
 
-REST stands for **Representational State Transfer**. It is a set of rules that are used to create API's. It is basically an architecture to create API's. With REST we would be working with resources. At the core REST is based on what we call `Architectural Constraints`. These are the rules that we need to follow to create a RESTful API. They are;
+REST stands for **Representational State Transfer**. It is a set of rules that are used to create API's. With REST we would be working with resources. At the core REST is based on what we call `Architectural Constraints`. They are;
 
 - Client-Server : Must follow client-server model.
 
