@@ -6,9 +6,7 @@
 
 </div>
 
-#### Web development refers to the process of creating and maintaining _websites_ and _web applications_ that are accessible over the internet.
-
-> #### This repository contains all the code, notes, and resources I have written while learning Full stack web development. I would be updating this repository as I learn new topics. Minor projects are available [here](./Minor%20Projects/) and major projects are available [here](./Major_project.md)
+### This repository contains all the code, notes, and resources I have written while learning Full stack web development. I would be updating this repository as I learn new topics. Minor projects are available [here](./Minor%20Projects/) and major projects are available [here](./Major_project.md)
 
 ### Contents
 
