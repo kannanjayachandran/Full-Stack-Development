@@ -1,37 +1,75 @@
-# How browsers render content ? 
+<h1 align="center">Rendering Content on the Browser</h1>
 
-At the end of the day the browser has to render the `html`, `css` and `JS` into UI that the user can interact with. The browser does this by following the **Critical Rendering Path**.
+The browser converts `HTML`, `CSS`, and `JS` into an interactive UI. The **Critical Rendering Path** is the process of transforming HTML and related files from the server into a user interface. It involves five key steps:
 
-## Critical Rendering Path
 
 The process of converting the HTML and files received from the server into a UI the User could interact with is known as **Critical Rendering Path**. It has 5 primary steps.
 
-1. Parse HTML into `DOM Tree`. (Requests any resources found; images, scripts, stylesheet).
-2. Parse CSS into CSS Object Model (`CSSOM`) tree.
-3. Combines `DOM` and `CSSOM` into `render tree`.
+1. Parse HTML into a `DOM Tree`(Document Object Model) and requests any resources found, like images, scripts, stylesheets.
+
+2. Parse CSS into the CSS Object Model (`CSSOM`) tree.
+
+3. Combine the `DOM` and `CSSOM` into the `Render Tree`.
+
 4. Calculate the layout (width, height, location).
-5. Paint.
 
-## Dynamic Changes
+5. Paint the content.
 
-- **Color change** : The browser will only repaint the node that changed.
-- **Position change** : The browser will reflow the content and repaint the node that changed and all its siblings and children.
-- **Major change** : The browser will reflow the content and repaint the whole page.
+After the first content is painted; browser has to look any change in the DOM or CSSOM and repaint the content. Usually the browser would look for the following dynamic changes;
+
+- **Color change**: The browser repaints only the affected node.
+
+- **Position change**: The browser reflows content and repaints the affected node, its siblings, and children.
+
+- **Major change**: The browser reflows and repaints the entire page.
 
 ## Preload Scanner
 
-![Preload scanner image](./preloadScanner.png)
+The browser uses a **Preload Scanner** to identify resources that are needed to render the page. It scans the HTML and CSS files to identify resources like images, scripts, and stylesheets. The browser then requests these resources from the server to render the page.
+
+![Preload scanner image](./img/preloadScanner.png)
 
 ## Key Performance Metrics
 
-- **First paint / First contentful paint** : The time it takes for the browser to render the first pixel on the screen (Time taken to paint the first DOM element).
-- **First meaningful paint** : The time it takes for the browser to render the first meaningful content on the screen (Time taken to paint the first DOM element that is visible to the user).
-- **First interactive / Time to interactive** : The time it takes for the browser to become interactive (Time taken to respond to user input or click on buttons, etc.)
+- **First Paint / First Contentful Paint**: Time until the browser renders the first pixel on the screen.
 
-## How to optimize the Critical Rendering Path ?
+- **First Meaningful Paint**: Time until the browser renders the first meaningful content visible to the user.
 
-- **Defer or async** : Load scripts asynchronously or defer them to the end of the page.
-- **Minimize DOM size** : Minimize the number of DOM elements.
-- **Reduce file size** : Minimize the size of the files (compression/minify).
-- **Lazy loading** : Load images only when they are visible to the user and not requesting everything at once.
-- **Hardware acceleration** : Use GPU to render content.
+- **First Interactive / Time to Interactive**: Time until the browser becomes responsive to user input (e.g., clicking buttons).
+
+## How to optimize the Critical Rendering Path
+
+- **Defer or async**: Load scripts asynchronously or defer them until the end of the page.
+- **Minimize DOM size**: Reduce the number of DOM elements.
+- **Reduce file size**: Compress or minify files to reduce their size.
+- **Lazy loading**: Load images only when they are visible to the user.
+- **Hardware acceleration**: Use the GPU for rendering content.
+
+
+## High level overview of Browsers
+
+A web browser relies on several components working together to provide a seamless browsing experience. Here's an overview of the major components and their functions:
+
+- **User Interface**: This includes menus, toolbars, and other visual elements that allow users to interact with the browser. It covers everything in the browser except the window displaying the requested page.
+
+- **Rendering Engine**: This component interprets HTML, CSS, and JavaScript code to render web pages.
+  > Examples include Blink (used by Google Chrome) and Gecko (used by Mozilla Firefox).
+
+- **Browser Engine**: This manages the interaction between the rendering engine and the user interface, handling tasks like managing bookmarks, history, and extensions.
+  > Examples include WebKit (used by Safari) and Trident (used by Internet Explorer).
+
+- **Networking**: This component handles communication between the browser and the internet, managing HTTP requests, responses, and security protocols like HTTPS.
+  > Examples include the TCP stack and DNS resolver.
+
+- **JavaScript Engine**: This component executes JavaScript code on web pages.
+  > Examples include V8 (used by Google Chrome) and SpiderMonkey (used by Mozilla Firefox).
+
+- **Video Rendering**: This component renders video content on web pages.
+  > Examples include WebM and H.264.
+
+Other components include:
+- Data storage
+- UI backend
+- Plugins/add-ons
+
+> Read more about [Security](Web_Security.md)

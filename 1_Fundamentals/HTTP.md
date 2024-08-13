@@ -1,25 +1,29 @@
-# HTTP Protocol
+<h1 align="center"> HTTP Protocol </h1>
 
-The **Hypertext Transfer Protocol** (*HTTP*) is an _application-layer_ protocol used for communication between client and server. It is the foundation of data communication on the World Wide Web. It is designed to facilitate the transfer of various types of data, primarily hypertext documents.
+The **Hypertext Transfer Protocol** (HTTP) is an _application-layer_ protocol used for communication between clients and servers. It is the foundation of data communication on the web, designed to transfer various types of data, primarily hypertext documents.
 
-HTTP follows a __client-server architecture__ and is __stateless__.
+HTTP follows a **client-server architecture** and is **stateless**.
 
 ## HTTP Request
 
-`HTTP` request are simply a way to ask for data from the server. The request consists of three parts: `method`, `path` and `protocol`. `method` is used to specify the type of request. `path` is used to specify the location of the resource on the server. `protocol` is used to specify the version of the protocol used. The request can also contain `headers` (to send additional information) and `body` (to send the data). HTTP methods are;
+An `HTTP` request is how a client asks for data from the server. It consists of three main parts: `method`, `path`, and `protocol`. The `method` specifies the type of request, the `path` indicates the location of the resource on the server, and the `protocol` defines the version of HTTP used. Additionally the request includes `headers` (for additional information) and a `body` (for sending the actual data). 
+
+Common HTTP methods are:
 
 ### GET
 
-```http
+`GET` is the request method used to retrieve data from the server.
+
+```h
 GET /example/electronics/mobiles HTTP/1.1
 ```
 
-`GET` is the `method` of the request. It is used to retrieve data from the server. `/example/electronics/mobiles` is the `path` of the request. It is the location of the resource on the server. `HTTP/1.1` is the `protocol` of the request. It is the version of the protocol used.
-
 ### POST
 
-```http
-POST /Submit HTTP/1.1
+The POST method sends data to the server, with the data included in the request's body.
+
+```h
+POST /Submit HTTP/1.1 
 HOST: www.example.com
 Accept: text/html
 Content-Type: application/Json
@@ -29,11 +33,31 @@ Content-Type: application/Json
 }
 ```
 
-We use post method to send data to the server. The data is sent in the body of the request. Here `content-type` is used to specify the type of data being sent. The data inside the curly braces is known as `payload` or body of the request.
+### PUT
 
-## HTTP Response
+The PUT method is used to update a resource on the server.
 
-```http
+```h
+PUT /example/electronics/mobiles/iphone HTTP/1.1
+```
+
+### DELETE
+
+The DELETE method is used to delete a resource on the server.
+
+```h
+DELETE /example/electronics/mobiles/iphone HTTP/1.1
+```
+
+We have other http methods like 
+
+- `PATCH` is used to update a resource partially.
+- `HEAD` is used to get the headers of a resource.
+- `OPTIONS` is used to get the supported methods of a resource.
+
+Let's look a HTTP Response
+
+```h
 HTTP/1.1 200 OK
 Content-Type: text/html
 
@@ -50,18 +74,11 @@ Content-Type: text/html
         </ul>
     </body>
 </html>
-
 ```
 
-## Other HTTP Methods
-
-- `PUT` is used to update a resource.
-- `DELETE` is used to delete a resource.
-- `PATCH` is used to update a resource partially.
-- `HEAD` is used to get the headers of a resource.
-- `OPTIONS` is used to get the supported methods of a resource.
-
 ## HTTP Status Codes
+
+HTTP status codes are standard response codes given by web servers. They are used to indicate the outcome of an HTTP request. The status codes are divided into five categories:
 
 | sl.no | Status Code | Description   |
 | ----- | ----------- | ------------- |
@@ -69,6 +86,7 @@ Content-Type: text/html
 | 2     | 2xx         | Success       |
 | 3     | 3xx         | Redirection   |
 | 4     | 4xx         | Client Error  |
+| 5     | 5xx         | Server Error  |
 
 ### 2xx Success
 
@@ -105,20 +123,20 @@ Content-Type: text/html
 
 - Most common ones are `200, 201, 301, 302, 400, 401, 403, 404, 500, 501, 503`
 
-## Cookies
-
-We use the `set-cookie` header to set cookies. The `cookie` header is used to send the cookies to the server.
-
 ## HTTPS
 
-HTTPS is the secure version of HTTP. It uses `SSL` or `TLS` to encrypt the data. It uses port 443. A high level overview of how HTTPS works is given below.
+`HTTPS` is the secure version of HTTP, where the communication between the client and server is encrypted. It uses `SSL/TLS` to encrypt the data. 
 
-- While the client and the server communicates; the server sends `public key` + `certificate` to the client.
+## Cookies
 
-- The client would then verify the certificate and create a `session key`, which is used to encrypt the data throughout the session.
+We use the `set-cookie` header to set cookies and `cookie` to send the cookies to the server.
 
-- The client would then encrypt the session key using the public key and send it to the server.
+## CORS
 
-- The server would then decrypt the session key using the server's private key and use it to decrypt the data.
+Cross-Origin Resource Sharing (CORS) is a mechanism that allows many resources (e.g., fonts, JavaScript, etc.) on a web page to be requested from another domain outside the domain from which the resource originated. It's a security feature implemented by browsers to prevent malicious websites from stealing data. 
 
-> More on **APIs** [How to communicate with the server](./API.md)
+## WebSockets
+
+WebSockets is a communication protocol that provides full-duplex communication channels over a single TCP connection. It's a two-way communication channel that operates over a single socket and is ideal for real-time applications. 
+
+> More on [ API's; How two applications talk to each other](./API.md)

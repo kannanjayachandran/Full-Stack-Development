@@ -1,46 +1,65 @@
-# Web Security 🔐
+<p align="center"> Web Security </p>
 
-Web security is a very important topic. It is very important to know how to secure our data and how to prevent attacks. There are many types of attacks. Some of them are;
+Web security is crucial for protecting data and preventing attacks. Here are some common types of attacks:
 
 - Injection attacks
-- Cross site scripting (XSS)
-- Cross site request forgery (CSRF)
+- Cross-Site Scripting (XSS)
+- Cross-Site Request Forgery (CSRF)
 
-The browser is responsible for protecting the end user from these attacks. Out of many security measures, the most basic ones the browser implements to protect the end user is; 
 
-## Same origin policy 🪪
+The browser plays a key role in protecting users from these threats. Among the security measures it implements, the most fundamental ones include:
 
-It restrict the way scripts from other origin can interact. In practice what this means is that the if we have two tabs open in our PC one having a banking site opened and another malicious website then the malicious site wont be able to access the contents of the baking site. This also applies to `iframes` or embedding a website in another one. The parent website won't have any access to the data stored or managed by the embedded site. This is also applicable to network requests.
 
-## Cross origin Resource sharing (CORS) 🪪
+## Same origin policy
 
-In some cases, like when we may need to access a public api, we may need to circumvent the same origin policy. That's where CORS come into the picture. It primarily works through headers. Two important CORS headers are :
+This policy restricts how scripts from different origins can interact. For example, if you have one tab open to a banking site and another to a malicious site, the malicious site cannot access the contents of the banking site. This also applies to `iframes` or embedded websites; the parent site cannot access data managed by the embedded site. The same restriction applies to network requests.
 
-- Access control allow origin : Indicates another origin that can request the server.
-- Access control allow credentials : Indicates it's credentials should be sent cross origin.
+## Cross origin Resource sharing (CORS)
 
-## Some other types of attacks 🥷
+In some cases, you may need to bypass the same-origin policy, such as when accessing a public API. CORS comes into play here. It primarily works through headers. Two key CORS headers are:
 
-### 1. Cross site scripting (XSS)
+- `Access-Control-Allow-Origin`: Specifies which origins can make requests to the server.
+- `Access-Control-Allow-Credentials`: Indicates whether credentials should be sent with cross-origin requests.
 
-In this type of attack the attacker would inject JS code into the UI, thus circumvent the same origin policy. It is of different types.
+## Cross site scripting (XSS)
 
-1. Persistent : Commenting some malicious code in the comment section of a website.
-2. Non-Persistent : Sending a link with some search parameter and thus execute malicious code.
-3. Dom based : It does not send data to the server, everything happens on the frontend.
+In an XSS attack, an attacker injects JavaScript code into the UI, bypassing the same-origin policy. XSS attacks come in different forms:
 
-### 2. window.opener()
+1. **Persistent**: Injecting malicious code into a website's comment section.
 
-It is a JS property to open a new tab. This can open many vulnerabilities. Solution -> add (`rel="no opener no reference") attribute.
+2. **Non-Persistent**: Sending a link with malicious code in the search parameters.
 
+3. **DOM-Based**: The attack happens entirely on the frontend without sending data to the server.
+
+
+## window.opener()
+
+This JavaScript property is used to open a new tab, which can introduce vulnerabilities. The solution is to add the `rel="noopener noreferrer"` attribute to links.
+
+## Cross-Site Request Forgery (CSRF)
+
+In a CSRF attack, a malicious website tricks a user into performing actions on another site where the user is authenticated. To prevent CSRF attacks, you can use:
+
+- **CSRF tokens**: A unique token is generated for each user session and sent with each request. The server validates the token before processing the request.
+
+- **SameSite cookies**: A cookie attribute that prevents the browser from sending cookies in cross-site requests.
+
+- **Referrer Policy**: A header that controls how much information is included in the `Referer` header.
+
+- **Content Security Policy (CSP)**: A header that restricts the sources of content that can be loaded on a website.
+
+- **HTTPOnly and Secure flags**: Flags that prevent cookies from being accessed by JavaScript and only sent over HTTPS, respectively.
 
 ## Open Authorization (O-auth)
 
-The primary purpose of authorization is for different services to communicate with each other and to know what they are and are not authorized to do. It gives API access to other websites without passwords. O auth is used pretty much everywhere now a days; like sign in with Google, GitHub, facebook; all are O auth. The basic working of O Auth is like this;
+OAuth is a protocol for authorization that allows different services to communicate and know what they are and are not authorized to do. It provides API access to other websites without sharing passwords. OAuth is widely used today, for example, when signing in with Google, GitHub, or Facebook.
 
-- A website would need access to some service like google or facebook or may require to verify your identity.
-- It would send a request to google, then google would send a popup asking the used whether the user trusts the website to give them access to the person's google account or some part of it to some particular operations.
-- Once the user confirms, Google would send a token to the website which could be used to perform the task.
+The basic process of OAuth works like this:
 
-The common token used for O auth is `JWT` or Json web token. These tokens are signed and while everyone could see the token, the server would know if someone tampered it.
+- A website requests access to a service like Google or Facebook to verify your identity or access certain data.
 
+- The service (e.g., Google) sends a popup asking if you trust the website to access specific parts of your account.
+
+- Once you confirm, the service sends a token to the website, which can be used to perform the allowed tasks.
+
+A common token used in OAuth is the **JWT** (JSON Web Token). These tokens are signed, meaning while anyone can see the token, the server can detect if it has been tampered with.

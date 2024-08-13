@@ -18,7 +18,11 @@ First let's describe some key terms:
 
 4. **Server** : A computer that is always connected to the internet and is responsible for responding to the requests made by the browser. It can be a physical machine or a virtual machine. 
 
-> It's also described as a software that runs on a computer and listens for incoming requests. 
+> It's also described as a software that runs on a computer and listens for incoming requests.
+
+The technology in which the network load is distributed between servers and service customers is called **Client-Server Architecture**.
+
+![Client Server Architecture](./img/Client_Server_Architecture.png)
 
 --- 
 
@@ -191,7 +195,7 @@ After establishing the connection, the client sends an HTTP request to the serve
 
 - `Body` (data sent to the server)
 
-And many more. The server processes this request and sends back a response. The request goes through various networking layers:
+And many more. The server processes this request and sends back a response. We will discuss more about the HTTP protocol latter. The request goes through various networking layers:
 
 1. **Transport layer** : Adds the destination port to the header, creating a TCP segment. When we prefer connection speed over reliability, we use `UDP` (User Datagram Protocol), it is connection-less and faster.
 
@@ -201,4 +205,4 @@ And many more. The server processes this request and sends back a response. The 
 
 The data reaches the router, which forwards it to the server. The server then sends a response back to the client.
 
-> ### [HTTP-protocol, How computers talk to each other..](HTTP.md)
+> More on [HTTP-protocol, How computers talk to each other..](HTTP.md)
