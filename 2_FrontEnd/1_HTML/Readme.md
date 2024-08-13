@@ -1,19 +1,14 @@
 <div align="center">
 
-# HTML { HyperText Markup Language }
+<h1> HTML </h1>
 
-### [Documentation](https://developer.mozilla.org/en-US/docs/Web/HTML)
-### [Awesome resource - HTML Reference](https://htmlreference.io/)
+**[MDN Documentation](https://developer.mozilla.org/en-US/docs/Web/HTML) |  [Awesome resource for HTML](https://htmlreference.io/)**
 
 </div>
 
-## HTML Basics
-
-HTML consists of a set of tags that define the structure of a web page. A basic HTML document has an opening and closing `<html>` tag, a `<head>` tag, and a `<body>` tag. The `<head>` tag contains information about the document, such as the title, author, and meta-data. The `<body>` tag contains the content that will be displayed on the web page.Almost all tags have attributes. HTML attributes provide additional information about the HTML elements.
+HTML is used to give structure to web pages.
 
 ## Essential Tags
-
-There are many different HTML tags, but some of the most common ones are:
 
 - `<html>` - This tag indicates the start of an HTML document and should be placed at the beginning of every HTML file.
 
@@ -70,87 +65,25 @@ There are many different HTML tags, but some of the most common ones are:
 
 ## Semantic HTML
 
-We can use HTML just for the purpose of representation, or we can use it to provide meaning to the content and its context. The latter is called semantic HTML. Semantic HTML is more accessible and understandable to both humans and machines. It also helps with search engine optimization (_SEO_). 
-
-**Most importantly it helps screen readers to understand the content and provide better accessibility to the users.**
+Semantic HTML is more accessible and understandable to both humans and machines.**It helps screen readers to understand the content and provide better accessibility to the users.** It also helps with search engine optimization (_SEO_).  
 
 Some of the most common semantic HTML tags are `<header>`, `<nav>`, `<main>`, `<article>`, `<section>`, `<aside>`, `<footer>`, `<figure>`, and `<figcaption>`. All these can be used instead of generic `<div>` and `<span>` tags.
 
 1. `<article>` : Defines a self-contained block of content that can exist in any context. It can have its own header, footer, sections... Useful for a list of blog posts.
 
-```html
-<article>
-  <header>
-    <h3>
-      <a href="/my-blog-post">My blog post</a>
-    </h3>
-  </header>
-  <section>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec viverra nec nulla vitae mollis.</p>
-  </section>
-  <footer>
-    <small>
-      Posted on <time datetime="2017-04-29T19:00">Apr 29</time> in <a href="/category/code">Code</a>
-    </small>
-  </footer>
-</article>
-```
-
 2. `<aside>` : Defines a block of content that is related to the main content. Displayed as a sidebar usually. Useful for a list of links to other articles or about the author kind of information.
 
 3. `<figcaption>` : Defines a caption for a `<figure>` element. Useful for images, diagrams, illustrations, code snippets, etc.
-
-```html
-<figcaption>The caption for an image</figcaption>
-```
 
 4. `<figure>` : Defines self-contained content, such as images, diagrams, illustrations, code snippets, etc.
 
 5. `<footer>` : Defines a footer for a document or section. Useful for a list of links to other articles or about the author kind of information.
 
-```html
-<figure>
-  <img src="/images/html.png" alt="HTML logo">
-</figure>
-```
-
 6. `<header>` : Defines a header for a document or section. Useful for a list of links to other articles or about the author kind of information.
-
-```html
-<header>
-  <h1>HTML Reference</h1>
-  <nav>
-    <a>Home</a>
-    <a>About</a>
-    <a>Contact</a>
-  </nav>
-</header>
-```
 
 7. `<main>` : Defines the main content of a document. There should be only one *main* element in a document. Can be displayed with a sidebar.
 
-```html
-<main>
-  <h1>My blog post</h1>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec viverra nec nulla vitae mollis.</p>
-  <p>etc.</p>
-</main>
-
-<aside>
-  <h3>About the author</h3>
-  <p>Frontend Designer from Bordeaux, currently working for Improbable in sunny London.</p>
-</aside>
-```
-
 8. `<nav>` : Defines a set of navigation links. 
-
-```html
-<nav>
-    <a href="/">Home</a>
-    <a href="/about">About</a>
-    <a href="/contact">Contact</a>
-  </nav>
-```
 
 9. `<section>` : Defines a section in a document. Useful for a list of blog posts.
 
@@ -294,9 +227,7 @@ Forms are an essential part of many web applications, allowing users to enter da
 
 ## Accessibility
 
-Accessibility refers to the design and development of websites, applications, and technology that are accessible to people with disabilities. The goal of accessibility is to ensure that everyone, regardless of their abilities or disabilities, can use and interact with digital content and technology in a meaningful and effective way.
-
-Ensuring accessibility requires a combination of design and development techniques, such as using semantic HTML, providing alternative text for images, using ARIA (Accessible Rich Internet Applications) attributes, and testing with assistive technologies. In addition, accessibility guidelines and standards, such as the Web Content Accessibility Guidelines (WCAG), can be used to ensure that websites and applications meet the needs of people with disabilities.
+Accessibility refers to the design and development of websites, applications, and technology that are accessible to people with disabilities. Ensuring accessibility requires a combination of design and development techniques, such as using semantic HTML, providing alternative text for images, using ARIA (Accessible Rich Internet Applications) attributes, and testing with assistive technologies. I
 
 ## Meta Tags
 
