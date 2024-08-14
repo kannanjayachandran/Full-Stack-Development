@@ -6,6 +6,9 @@ button.addEventListener('click', () => {
     console.log(Event.target);
     console.log(this); // same as above line here because this is bound to button in this context
     console.log('You clicked the button !');
+    const para = document.createElement("h1");
+    para.textContent = "You clicked on the button";
+    document.body.appendChild(para);
 });
 
 // Event Propagation : Event propagation is a way to describe the “stack” of events that are 

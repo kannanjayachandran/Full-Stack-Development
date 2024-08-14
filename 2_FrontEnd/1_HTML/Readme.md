@@ -262,3 +262,5 @@ The **Document Object Model** (DOM) is a programming interface for web documents
 - The DOM includes a range of methods and properties that allow developers to perform a wide range of tasks, such as adding and removing elements, modifying text and attributes, and responding to user events.
 
 - The **DOM is updated in real-time** as the page is modified, which means that changes made to the DOM are immediately reflected in the web page.
+
+**Next chapter: [CSS](../2_CSS/Readme.md)**
