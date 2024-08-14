@@ -12,7 +12,7 @@
 
 | S.No. | Topics                          |                      Link                       |
 | :---: | :------------------------------ | :---------------------------------------------: |
-|  1.   | Internet and web Primer         | [Link](./1_Web%20Dev%20Fundamentals/Readme.md)  |
+|  1.   | Internet and web Primer         | [Link](./1_Fundamentals/Readme.md)  |
 |  2.   | HTML                            | [Link](./2_FrontEnd/1_HTML/)                    |
 |  3.   | CSS                             | [Link](./2_FrontEnd/2_CSS/Readme.md)            |
 |  4.   | JavaScript                      | [Link](./3_Javascript/)                         |
