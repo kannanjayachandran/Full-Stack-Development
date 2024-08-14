@@ -1,20 +1,18 @@
 <h1 align="center">CSS</h1>
 
-CSS is vast and it takes time to master it. Here I want to lay some sort of foundational knowledge on core CSS concepts and ultimately move on to CSS frameworks. The following topis will be covered:
-
-1. CSS Fundamentals and core concepts
-2. CSS Frameworks {Tailwind}
-3. CSS Pre-processors {SASS}
+CSS or Cascading Style Sheets is a style sheet language used for describing the presentation of a document written in a markup language like HTML. 
 
 ## CSS Fundamentals
 
-Cascading Style Sheet is simply a document that defines the style and layout of a website. The word cascading refers to the order of which the browser decides between various stylesheets. They are;
+The word cascading refers to the order of which the browser decides between various stylesheets. They are;
 
 1. User-Agent Stylesheet {Default stylesheets that come with the browser}
-2. User Stylesheet {Stylesheets that are defined by the user, the user preferences}
+
+2. User Stylesheet {Stylesheets that are defined by the user}
+
 3. Author Stylesheet {Stylesheets that are defined by the developer}
 
-Usually the precedence is from bottom to top. The author stylesheet has the highest precedence and the user-agent stylesheet has the lowest precedence. This may change depending on the use of `!important` keyword. 
+The author stylesheet has the highest precedence and the user-agent stylesheet has the lowest precedence. This may change depending on the use of `!important` keyword. 
 
 CSS is simply a collection of declarations.
 
@@ -151,9 +149,6 @@ When we want to apply a style to a particular state of an element, Pseudo-classe
 
 While using pseudo-classes, we need to be careful about the order of the selectors. _LVHA_ rule is a good way to remember the order. Some of the elements we commonly use pseudo-class selectors are:
 
-- Links
-- Forms
-
 ```css
 
 selector:pseudo-class {
@@ -226,9 +221,7 @@ p::after {
 
 Browser would always prefer the more specific selector. The specificity of a selectors goes something like this:
 
-![specificity precedence image](image.png)
-
-Inline style -> ID -> Class -> Pseudo-classes -> Attributes -> Elements -> Pseudo-elements
+![specificity precedence image](./img/selector_specificity.png)
 
 > <picture>
 >   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Mqxx/GitHub-Markdown/main/blockquotes/badge/light-theme/warning.svg">
@@ -281,11 +274,6 @@ There are two types of units in CSS:
 Absolute units are fixed units. They are not relative to anything. They are:
 
 - `px` - Pixels
-- `pt` - Points
-- `pc` - Picas
-- `in` - Inches
-- `cm` - Centimeters
-- `mm` - Millimeters
 
 **Relative Units**
 
@@ -303,7 +291,7 @@ Relative units are relative to something. They are:
 
 Everything displayed by CSS is a box. So understanding this box model is very important. The box model is made up of the following:
 
-![Box model diagram](./boxModel.png)
+![Box model diagram](./img/boxModel.png)
 
 1. Content - This is the actual content of the box, it can be text, image, video etc.
 
@@ -443,11 +431,11 @@ Flexbox layout is direction-agnostic unlike regular layouts (block - vertical-ba
 >   <img alt="Note" src="https://raw.githubusercontent.com/Mqxx/GitHub-Markdown/main/blockquotes/badge/dark-theme/note.svg">
 > </picture><br>
 >
-> If you are building a small scale website or preferably a layout consisting of one dimensional elements {Optional wrapping}, flexbox is the way to go. Using flex box is relatively easier than the older layout mechanisms.
->
-> Also direct children of a flex container are called flex items.
+> If you are building a small scale website or preferably a layout consisting of one dimensional elements {Optional wrapping}, flexbox is the way to go. In case of complex layouts, grid layout or grid and flexbox combination is recommended.
 
-![Flex box image](image-1.png)
+- Direct children of a flex container are called flex items.
+
+![Flex box image](./img/FlexBoxMain.png)
 
 - The flex layout has two axes, the main axis and the cross axis.
 
@@ -455,7 +443,9 @@ Flexbox layout is direction-agnostic unlike regular layouts (block - vertical-ba
 
 Since flexbox is a whole module and not a single property, it involves a lot of things including its whole set of properties. Some of them are meant to be set on the container (parent element, known as “flex container”) whereas the others are meant to be set on the children (said “flex items”).
 
-![Basic terms in flexbox](./flex-direction-terms.svg)
+
+
+![Basic terms in flexboxt](./img/FlexboxBasics.png)
 
 - `flex container` - The parent element that has `display: flex` set on it.
 
@@ -471,7 +461,7 @@ Since flexbox is a whole module and not a single property, it involves a lot of 
 
 **Flexbox properties**
 
-![Flex-Properties](image-2.png)
+![Flex-Properties](./img/FB_properties1.png)
 
 **Properties on Parent (Flex Container)**
 
@@ -485,7 +475,7 @@ Since flexbox is a whole module and not a single property, it involves a lot of 
 
 - `flex-direction` - Defines the main-axis, thus defining the direction flex items are placed in the flex container.
 
-![flex-direction-image](image-3.png)
+![flex-direction-image](./img/FB_properties2.png)
 
 ```css
 .container {
@@ -500,7 +490,7 @@ Since flexbox is a whole module and not a single property, it involves a lot of 
 
 - `flex-wrap` - By default, flex items will all try to fit onto one line. You can change that and allow the items to wrap as needed.
 
-![flex-wrap-image](image-4.png)
+![flex-wrap-image](./img/FlexWrap.png)
 
 ```css
 .container {
@@ -514,7 +504,7 @@ Since flexbox is a whole module and not a single property, it involves a lot of 
 
 - `Justify-content` - Defines the alignment along the main axis. It helps distribute extra free space left over when either all the flex items on a line are inflexible, or are flexible but have reached their maximum size.
 
-![justify-content properties](image-5.png)
+![justify-content properties](./img/Justify_Content.png)
 
 ```css
 .container {
@@ -531,7 +521,7 @@ Since flexbox is a whole module and not a single property, it involves a lot of 
 
 - `align-items` - Defines the default behavior for how flex items are laid out along the cross axis on the current line. Like justify-content version for the cross-axis.
 
-![align-items properties](image-6.png)
+![align-items properties](./img/Align_items.png)
 
 ```css
 .container {
@@ -547,7 +537,7 @@ Since flexbox is a whole module and not a single property, it involves a lot of 
 
 - `align-content` - This aligns a flex container’s lines within when there is extra space in the cross-axis, similar to how justify-content aligns individual items within the main-axis.
 
-![align-content properties](image-7.png)
+![align-content properties](./img/align_content.png)
 
 ```css
 .container {
@@ -572,7 +562,7 @@ Since flexbox is a whole module and not a single property, it involves a lot of 
 
 - `gap Property` - It controls the space between flex items. It applies that spacing only between items not on the outer edges. 
 
-![gap property](image-8.png)
+![gap property](./img/gap.png)
 
 ```css
 .container {
@@ -626,7 +616,7 @@ div:nth-of-type(1){order: 3;} /* 1st element to appear 3rd */
 
 If all items in the container has `flex-grow` set to 1, the remaining space in the container will be distributed equally to all children. If one of the children has a value of 2, the remaining space would take up twice as much space as the others (if possible).
 
-![Flex-grow](image-9.png)
+![Flex-grow](./img/flex_grow.png)
 
 ```css
 .item {
@@ -668,7 +658,7 @@ If all items in the container has `flex-grow` set to 1, the remaining space in t
 
 - `align-self` - This allows the default alignment (or the one specified by align-items) to be overridden for individual flex items.
 
-![align-self property](image-10.png)
+![align-self property](./img/align_self.png)
 
 ```css
 .item {
@@ -690,30 +680,28 @@ CSS Grid Layout is a 2-Dimensional grid based layout system. It is a whole modul
 
 - **`Grid Line`** : The lines that makes up the structure of the grid. They can be either vertical (“column grid lines”) or horizontal (“row grid lines”) and reside on either side of a row or column.
 
-![Grid line example](image-11.png)
+![Grid line example](./img/grid_line.png)
 
 - **`Grid Cell`** : The space between two adjacent row and two adjacent column grid lines. It’s a single “unit” of the grid.
 
-![Grid cell image](image-12.png)
+![Grid cell image](./img/grid_cell.png)
 
 - **`Grid Track`** : The space between two adjacent grid lines. You can think of them like the columns or rows of the grid.
 
-![Grid track image](image-13.png)
+![Grid track image](./img/grid_track.png)
 
 - **`Grid Area`** : The total space surrounded by four grid lines. A grid area may be comprised of any number of grid cells.
 
-![Grid area image](image-14.png)
+![Grid area image](./img/grid_area.png)
 
 
 **Grid Properties**
 
-![Grid properties list](image-15.png)
-
-First thing set the display property of the parent/container to grid.
+- `display` - Defines the element as a grid container and establishes a new grid formatting context for its contents.
 
 ```css
 .container {
-  display: grid;
+  display: grid | inline-grid;
 }
 ```
 
@@ -741,22 +729,14 @@ First thing set the display property of the parent/container to grid.
   gap: 10px;
 }
 ```
-> ![gap-property](image-16.png)
 
-With the above styling, all the columns would have the size of the content inside them. 
->![grid-size](image-17.png)
+- `grid-auto-rows` - Specifies the size of any auto-generated grid track. Auto-generated grid tracks are not the same as auto-placed tracks (which are created when grid items are placed outside of explicit grid tracks).
 
-We can set the size of all the grid, regardless of the content inside them by,
 ```css
-grid-auto-rows: 200px;
+.container {
+  grid-auto-rows: 200px;
+}
 ```
-> ![grid propery](image-18.png)
-
-We can use the `minmax` function to set the minimum and maximum size of the columns.
-```css
-grid-auto-rows: minmax(100px, auto);
-```
-> ![min-max property](image-19.png)
 
 - `grid-template-rows` - Defines the rows of the grid. Same as `grid-template-columns` but for rows.
 
@@ -765,7 +745,121 @@ grid-auto-rows: minmax(100px, auto);
   grid-template-rows: 200px 100px 200px;
 }
 ```
->![grid-row](image-20.png)
+
+- `align-items` - It aligns the content inside the _grid cell_. Base value is `stretch`.
+
+```css
+.container {
+  align-items: start | end | center | stretch;
+}
+```
+
+- `justify-content` - It aligns the container along the main axis.
+
+```css
+.container {
+  justify-content: start | end | center | stretch | space-around | space-between | space-evenly;
+}
+```
+
+- `align-self` and `justify-self` - It aligns the content inside the _grid cell_. Base value is `stretch`.
+
+```css
+/* let's say each div has a class of item */
+.item:nth-of-type(2) {
+  height: 100px;
+  width: 100px;
+
+  align-self: center;
+  justify-self: center;
+}
+```
+
+- `grid-column` Span - We can decide the number of columns a grid item should span using the `grid-column` property.
+
+```css
+
+.item:nth-of-type(1) {
+  background: black;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  /* or using the shorthand */
+  grid-column: 1 / 3;
+  /* Instead of hardcoding the number of columns, we can use the span keyword. */
+  grid-column: 1 / span 2;
+  /* Which means start from the first column and span 2 columns. */
+}
+```
+
+- `grid-row` Span - We can decide the number of rows a grid item should span using the `grid-row` property.
+
+```css
+.item:nth-of-type(3) {
+  background: grey;
+  grid-row: 2 / span 2;
+}
+```
+
+- `grid-template-areas` - Defines a grid template by referencing the names of the grid areas which are specified with the grid-area property. Repeating the name of a grid area causes the content to span those cells. A period signifies an empty cell. The syntax itself provides a visualization of the structure of the grid.
+
+- `grid-template` - A shorthand for setting `grid-template-rows`, `grid-template-columns`, and `grid-template-areas` in a single declaration.
+
+```css
+.container {
+  grid-template: none | <grid-template-rows> / <grid-template-columns> | <grid-template-areas>;
+}
+```
+
+- `grid-template-columns` - Defines the columns of the grid with a space-separated list of values. The values represent the track size, and the space between them represents the grid line.
+
+```css
+.container {
+  grid-template-columns: 100px 200px 100px;
+  /* This would give a 3 column layout with specified width. */
+  /* We generally use fractional units to define the width of the columns. */
+  grid-template-columns: 1fr 2fr 1fr;
+  /* We can also use the repeat function to repeat the same value. */
+  grid-template-columns: repeat(3, 1fr);
+}
+```
+
+- `column-gap` - Specifies the size of the grid lines. You can think of it like setting the width of the gutters between the columns/rows.
+`row-gap` is the same as `column-gap` but for rows.
+
+```css
+.container {
+  column-gap: 10px;
+  row-gap: 10px;
+  /* We can also use the gap property to set both column-gap and row-gap. */
+  gap: 10px;
+}
+```
+
+![gap-property](./img/gap_properties.png)
+
+With the above styling, all the columns would have the size of the content inside them. 
+![grid-size](./img/grid_size.png)
+
+We can set the size of all the grid, regardless of the content inside them by,
+```css
+grid-auto-rows: 200px;
+```
+![grid property](./img/grid_property2.png)
+
+We can use the `minmax` function to set the minimum and maximum size of the columns.
+```css
+grid-auto-rows: minmax(100px, auto);
+```
+![min-max property](./img/min_max.png)
+
+- `grid-template-rows` - Defines the rows of the grid. Same as `grid-template-columns` but for rows.
+
+```css
+.container {
+  grid-template-rows: 200px 100px 200px;
+}
+```
+![grid-row](./img/grid_row.png)
 
 - `align-items` - It aligns the content inside the _grid cell_. Base value is `stretch`.
 
@@ -778,7 +872,7 @@ grid-auto-rows: minmax(100px, auto);
 ```css
 align-items: start;
 ```
-> ![align-items](image-21.png) 
+> ![align-items](./img/align_items_grid.png) 
 
 - `justify-content` - It aligns the container along the main axis.
 
@@ -799,7 +893,7 @@ align-items: start;
   justify-self: center;
 }
 ```
->![align-self and justify-self](image-22.png)
+>![align-self and justify-self](./img/justify_items_grid.png)
 
 - `grid-column` Span - We can decide the number of columns a grid item should span using the `grid-column` property.
 
@@ -823,144 +917,4 @@ align-items: start;
   grid-row: 2 / span 2;
 }
 ```
-![grid-row and grid-column](image-23.png)
-
-
-
-
-
-
-
-
-
-- `grid-template-areas` - Defines a grid template by referencing the names of the grid areas which are specified with the grid-area property. Repeating the name of a grid area causes the content to span those cells. A period signifies an empty cell. The syntax itself provides a visualization of the structure of the grid.
-
-```css
-.container {
-  grid-template-areas: <grid-area-name> ... | <line-name> <grid-area-name> ...;
-  /* One value for each row */
-  /* <grid-area-name> = <custom-name> */
-  /* <line-name> = <custom-name> */
-}
-```
-
-- `grid-template` - A shorthand for setting `grid-template-rows`, `grid-template-columns`, and `grid-template-areas` in a single declaration.
-
-```css
-.container {
-  grid-template: none | <grid-template-rows> / <grid-template-columns> | <grid-template-areas>;
-}
-```
-
-
-
-
-
-- `justify-items` - Aligns grid items along the inline (row) axis (as opposed to align-items which aligns along the block (column) axis). This value applies to all grid items inside the container.
-
-```css
-.container {
-  justify-items: start | end | center | stretch;
-}
-```
-
-- `place-items` - A shorthand for align-items and justify-items.
-
-```css
-.container {
-  place-items: <align-items> <justify-items>;
-}
-```
-
-- `place-content` - A shorthand for align-content and justify-content.
-
-```css
-.container {
-  place-content: <align-content> <justify-content>;
-}
-```
-
-- `grid-auto-columns` - Specifies the size of any auto-generated grid track. Auto-generated grid tracks are not the same as auto-placed tracks (which are created when grid items are placed outside of explicit grid tracks).
-
-```css
-.container {
-  grid-auto-columns: <track-size>;
-  /* <track-size> = <length> | <percentage> | <flex> | minmax(<min>, <max>) | fit-content(<length-percentage>) */
-}
-```
-
-- `grid-auto-rows` - Specifies the size of any auto-generated grid track. Auto-generated grid tracks are not the same as auto-placed tracks (which are created when grid items are placed outside of explicit grid tracks).
-
-```css
-.container {
-  grid-auto-rows: <track-size>;
-  /* <track-size> = <length> | <percentage> | <flex> | minmax(<min>, <max>) | fit-content(<length-percentage>) */
-}
-```
-
-- `grid-auto-flow` - Controls how auto-placed items are inserted in the grid. It has two values:
-
-  - `row` - Auto-placed items are inserted along the row axis at the start of the implicit grid.
-  - `column` - Auto-placed items are inserted along the column axis at the start of the implicit grid.
-
-```css
-.container {
-  grid-auto-flow: row | column | dense;
-}
-```
-
-- `grid` - A shorthand for setting `grid-template-rows`, `grid-template-columns`, `grid-template-areas`, `grid-auto-rows`, `grid-auto-columns`, and `grid-auto-flow` in a single declaration.
-
-```css
-.container {
-  grid: none | <grid-template-rows> / <grid-template-columns> | <grid-template-areas> | <grid-auto-flow> [ <grid-auto-rows> ] [ / <grid-auto-columns> ];
-}
-```
-
-- `grid-column` - A shorthand for `grid-column-start` and `grid-column-end`.
-
-```css
-.item {
-  grid-column: <start-line> / <end-line> | <start-line> / span <value>;
-}
-```
-
-- `grid-row` - A shorthand for `grid-row-start` and `grid-row-end`.
-
-```css
-.item {
-  grid-row: <start-line> / <end-line> | <start-line> / span <value>;
-}
-```
-
-- `grid-area` - Either specifies a name for the grid item, or this property is a shorthand for the grid-row-start, grid-column-start, grid-row-end, and grid-column-end properties, specifying a grid item’s size and location within the grid row by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the edges of its grid area.
-
-```css
-.item {
-  grid-area: <name> | <row-start> / <column-start> / <row-end> / <column-end> | <row-start> / <column-start> / span <row-end> / span <column-end>;
-}
-```
-
-- `justify-self` - Aligns a grid item inside a cell along the inline (row) axis (as opposed to align-self which aligns along the block (column) axis). This value applies to a grid item inside a single cell.
-
-```css
-.item {
-  justify-self: start | end | center | stretch;
-}
-```
-
-- `align-self` - Aligns a grid item inside a cell along the block (column) axis (as opposed to justify-self which aligns along the inline (row) axis). This value applies to a grid item inside a single cell.
-
-```css
-.item {
-  align-self: start | end | center | stretch;
-}
-```
-
-- `place-self` - A shorthand for align-self and justify-self.
-
-```css
-.item {
-  place-self: <align-self> <justify-self>;
-}
-```
+![grid-row and grid-column](./img/grid_r_c.png)
