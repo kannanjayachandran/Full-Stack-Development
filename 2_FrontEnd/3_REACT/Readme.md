@@ -94,3 +94,116 @@ function App () {
     );
 }
 ```
+
+React offers class components as well, but modern react applications are built using functional components. We will mostly be using functional components.
+
+## Props
+
+Props are used to pass data from parent to child components. They are read-only and cannot be modified by the child component. Props are passed to the component as an object. Think of them as arguments to a function.
+
+```jsx
+function Welcome(props) {
+    return <h1>Hello, {props.name}</h1>;
+}
+
+function App () {
+    return (
+        <div>
+            <Welcome name="John Doe">
+            <p> Welcome to React </p>
+        </div>
+    );
+}
+```
+
+If we want to create a wrapper component that renders the children, we can use the `children` prop.
+
+```jsx
+function Wrapper(props) {
+    return <div>{props.children}</div>;
+}
+
+function App () {
+    return (
+        <Wrapper>
+            <Welcome name="John Doe">
+            <p> Welcome to React </p>
+        </Wrapper>
+    );
+}
+```
+
+we can do something called composition of props. This is where we pass props from a parent component to a child component.
+
+```jsx
+function Comment({userName, time, children}) {
+    return (
+        <section>
+        <p>{userName} commented at {time}</p>
+        {children}
+        </section>
+    )
+}
+
+function App () {
+    return (
+        <Comment Username="Tennyson" time={(new Date()).toString()}>
+        <h1> Hello World </h1>
+        <p> A paragraph </p>
+        </Comment>
+    );
+}
+```
+
+## State
+
+State is used to store data that changes over time. State is mutable and can be changed by the component. We use the `useState` hook to add state to a functional component. In react a `hook` is a function that lets you use state and other react features in a functional component. useState returns an array with two elements. The first element is the current state and the second element is a function that lets you update the state. We cannot call the `hook` statements conditionally, because internally react uses the order of hooks to determine the state of the component.
+
+```jsx
+import {useState} from 'react';
+
+export default function App() {
+    const [count, setCounting] = useState(0);
+
+    return (
+        <>
+            <button onClick={() => setCounting(count+1)}>Increment</button>
+            <p>Count: {count}</p>
+        </>
+    );
+}
+```
+
+Additional to values, we can also pass in function to useState. This function will be called only once, when the component is first rendered. So, if we have something computationally expensive, we can pass in a function to calculate the initial value.
+
+```jsx
+const [count, setCounting] = useState(() => {
+    const initialCount = 0;
+    return initialCount;
+});
+
+// or
+
+const [count, setCounting] = useState(veryExpensiveComputation);
+
+// Where veryExpensiveComputation is a function that returns the initial value
+```
+
+```jsx
+// useReducer
+const [state, dispatch] = useReducer(reducer,{count: 0});
+
+
+
+// reducer function; which is a function that takes in the current state and an action and returns the new state.
+function reducer(state, action) {
+    switch(action.type) {
+        case 'increment':
+            return {count: state.count + 1};
+        case 'decrement':
+            return {count: state.count - 1};
+        default:
+            throw new Error('Unknown action type');
+    }
+}
+
