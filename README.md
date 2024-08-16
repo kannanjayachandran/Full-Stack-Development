@@ -16,9 +16,9 @@
 |  2.   | HTML                            | [Link](./2_FrontEnd/1_HTML/)                    |
 |  3.   | CSS                             | [Link](./2_FrontEnd/2_CSS/Readme.md)            |
 |  4.   | JavaScript                      | [Link](./3_Javascript/)                         |
-|  5.   | React JS                        | [Link](./2_FrontEnd/3_REACT/Readme.md)          |
-|  6.   | Node JS                         | [Link](./4_BackEnd/1_Server/1_NODE_JS/)         |
-|  7.   | Express JS                      | [Link](./4_BackEnd/1_Server/2_EXPRESS_JS/)      |
+|  5.   | React                           | [Link](./2_FrontEnd/3_REACT/Readme.md)          |
+|  6.   | Node                            | [Link](./4_BackEnd/1_Server/1_NODE_JS/)         |
+|  7.   | Express                         | [Link](./4_BackEnd/1_Server/2_EXPRESS_JS/)      |
 |  8.   | Database                        | [Link](./4_BackEnd/2_Database/2_MONGO_DB/)      |
 |  9.   | Typescript                      | [Link](./5_Typescript/)                         |
 
