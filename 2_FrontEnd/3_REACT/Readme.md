@@ -207,3 +207,28 @@ function reducer(state, action) {
     }
 }
 
+// dispatch function; which is a function that takes in an action and calls the reducer function with the current state and the action.
+dispatch({type: 'increment'});
+```
+
+- Most of time we use `useState` hook to manage the state of the component. But in some cases, we need to manage the state of the component in a more complex way. In those cases, we can use the `useReducer` hook. The `useReducer` hook is similar to the `useState` hook, but it uses a reducer function to manage the state of the component. The `useReducer` hook takes in two arguments, the reducer function and the initial state of the component. The reducer function is a function that takes in the current state and an action and returns the new state. The `useReducer` hook returns an array with two elements, the current state and a dispatch function. The dispatch function is a function that takes in an action and calls the reducer function with the current state and the action.
+
+## Effect Hook
+
+The `useEffect` hook is used to perform side effects in a functional component. Side effects are things like data fetching, setting up subscriptions, and manually changing the DOM. The `useEffect` hook takes in two arguments, a function that performs the side effect and an array of dependencies. The function that performs the side effect is called the effect function. The effect function is called after the component is rendered to the DOM. The array of dependencies is used to tell react when to run the effect function. If the array of dependencies is empty, the effect function is called only once after the component is rendered to the DOM. If the array of dependencies is not empty, the effect function is called whenever one of the dependencies changes.
+
+```jsx
+import {useEffect} from 'react';
+
+export default function App() {
+    useEffect(() => {
+        console.log('Component rendered');
+    }, []);
+    return <h1>Hello World</h1>;
+}
+```
+
+```jsx
+
+
+
