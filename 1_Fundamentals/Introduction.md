@@ -1,20 +1,22 @@
 <h1 align="center"> Introduction  </h1>
 
+## Internet Timeline
+
+![img.png](img/timeline.png)
+
 First let's describe some key terms:
 
 1. **Internet** : A global network of computers that are connected to each other. It allows computers to communicate with each other and share information. _A Network of Networks_.
 
 2. **Webpage - Website - Web Application** :
+   - `Website` is a collection of web pages.
 
-  - `Website` is a collection of web pages.
+   - `Webpage` is a single document within a website.
 
-  - `Webpage` is a single document within a website.
-
-  - `Web application` is a type of website that allows users to interact with it. It's more dynamic and interactive than a static website.
+   - `Web application` is a type of website that allows users to interact with it. It's more dynamic and interactive than a static website.
 
 3. **Browser** : The software you use to access the internet. It's a complex tool that handles many tasks in the background. Almost all modern browsers uses something called `Chromium`; an open source browser project under the hood. It's really difficult to build a complete browser package from scratch.
-
-> Eg; `Google Chrome`, `Firefox`, `Safari`, `Microsoft Edge`, `Opera`, etc.
+    > Eg; `Google Chrome`, `Firefox`, `Safari`, `Microsoft Edge`, `Opera`, etc.
 
 4. **Server** : A computer that is always connected to the internet and is responsible for responding to the requests made by the browser. It can be a physical machine or a virtual machine. 
 
@@ -114,7 +116,7 @@ After parsing the URL, the browser has the following information:
 
 Next, the browser finds the server's unique **`IP address`** (Internet Protocol Address) using a process called `DNS lookup` (Domain Name System). IP address is a unique identifier for a computer on a network, which is used to locate and communicate with it.
 
-DNS lookup translates a human readable domain name into an IP address. The browser checks multiple places for this address, heavily relying on cached data for performance.
+DNS lookup translates a human-readable domain name into an IP address. The browser checks multiple places for this address, heavily relying on cached data for performance.
 
 - The browser first checks its own browser cache.
 
@@ -145,7 +147,7 @@ transmission control protocol for http or `TLS` transport layer security for htt
 
 ![MAC Address](./img/MAC_address.png)
 
-![Adress Resolution Protocol](./img/ARP.png)
+![Address Resolution Protocol](./img/ARP.png)
 
 ### TCP Handshake
 
@@ -205,4 +207,6 @@ And many more. The server processes this request and sends back a response. We w
 
 The data reaches the router, which forwards it to the server. The server then sends a response back to the client.
 
-> More on [HTTP-protocol, How computers talk to each other..](HTTP.md)
+Once the client receives the response, it goes through the same networking layers in reverse order. The browser then processes the response and renders the page.
+
+> More on [HTTP-protocol, How computers talk to each other...](HTTP.md)
