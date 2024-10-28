@@ -1,12 +1,10 @@
-<div align="center">
+<div align=center style="font-family: cursive;">
 
-# Full Stack Development
+# Full Stack Web Development
 
 <img src="./Cover_Photo.png" width="340" height="380" alt="DALL-E Generated Image of a old computer" />
 
-</div>
 
-**My full stack development learning journey.**
 
 ## Topics
 
@@ -25,3 +23,5 @@
 ----
 
 **[Resources](./Extras/Resource.md)** | **[License](./Extras/LICENSE)** | **[Code of Conduct](./Extras/CODE_OF_CONDUCT.md)** | **[Contribution Guideline](./Extras/CONTRIBUTING.md)**
+
+</div>
