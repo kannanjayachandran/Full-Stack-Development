@@ -1,24 +1,36 @@
-<h1 align="center"> Introduction  </h1>
+# Web Development
 
-## Internet Timeline
+Web development involves designing, building, and launching functional, interactive and visually appealing websites and applications. It can range from creating a simple static page to developing complex web-based applications, online businesses, and social networks.
+
+But before that we need to understand the basics of the internet and how it connect devices and how data is transferred between them. Then, we'll cover the HTTP protocol, the backbone of web communication, followed by an introduction to APIs, which are essential for modern web applications to work. We’ll also touch on web security, although it’s a vast topic, we’ll cover the basics.
+
+## 1. Internet
+
+A global network of computers that are connected to each other. It allows computers to communicate with each other and share information. _A Network of Networks_.
+
+**Internet Timeline**
 
 ![img.png](img/timeline.png)
 
-First let's describe some key terms:
+> Diagram by Alex Xu
 
-1. **Internet** : A global network of computers that are connected to each other. It allows computers to communicate with each other and share information. _A Network of Networks_.
+## 2. Webpage - Website - Web Application
 
-2. **Webpage - Website - Web Application** :
    - `Website` is a collection of web pages.
 
    - `Webpage` is a single document within a website.
 
    - `Web application` is a type of website that allows users to interact with it. It's more dynamic and interactive than a static website.
 
-3. **Browser** : The software you use to access the internet. It's a complex tool that handles many tasks in the background. Almost all modern browsers uses something called `Chromium`; an open source browser project under the hood. It's really difficult to build a complete browser package from scratch.
-    > Eg; `Google Chrome`, `Firefox`, `Safari`, `Microsoft Edge`, `Opera`, etc.
+## 3. Browser** 
 
-4. **Server** : A computer that is always connected to the internet and is responsible for responding to the requests made by the browser. It can be a physical machine or a virtual machine. 
+The software you use to access the internet. It's a complex tool that handles many tasks in the background. Almost all modern browsers uses something called `Chromium`; an open source browser project under the hood. It's really difficult to build a complete browser package from scratch.
+
+> Eg; `Google Chrome`, `Firefox`, `Safari`, `Microsoft Edge`, `Opera`, etc.
+
+## 4. Server**
+
+A computer that is always connected to the internet and is responsible for responding to the requests made by the browser. It can be a physical machine or a virtual machine.
 
 > It's also described as a software that runs on a computer and listens for incoming requests.
 
@@ -26,15 +38,14 @@ The technology in which the network load is distributed between servers and serv
 
 ![Client Server Architecture](./img/Client_Server_Architecture.png)
 
---- 
-
-That's pretty much all you need to know to get started. Now lets see how the browser works and how it fetches the web pages.
+---
+## How the Web Works
 
 When we search something or request a web page by clicking a link, the browser goes through several steps to retrieve the requested data from a server and display it as a webpage. This process is called the **Web Page Request Lifecycle**. Let's look at this process in detail.
 
-## Is it a URL or a search query ?
+### Distinguish between a URL and a Search Query
 
-The first thing the browser need to figure out is whether we have given a search query or a **URL** (Uniform Resource Locator). 
+The first thing the browser need to figure out is whether we have given a search query or a **URL** (Uniform Resource Locator).
 
 > Eg; `https://www.google.com/` or `How to make a cup of coffee?`
 
@@ -42,7 +53,7 @@ The first thing the browser need to figure out is whether we have given a search
 
 > In modern browsers both can be done from the same input field (Omni-box).
 
-When we type the first character in the **URL bar**, the keyboard would send an [interrupt](https://en.wikipedia.org/wiki/Interrupt) and the browser would receive an event. Then depending on factors like _search history, bookmarks, private/incognito mode, cookies_, etc. the browser would then show the suggestions.
+When we enter the first character in the **URL bar**, the keyboard would send an [interrupt](https://en.wikipedia.org/wiki/Interrupt) and the browser would receive an event. Then depending on factors like _search history, bookmarks, private/incognito mode, cookies_, etc. the browser would then show the suggestions.
 
 > Browsers uses various techniques to identify whether a given input is a URL or a search query. Like checking for particular keywords, checking for the presence of a protocol, etc.
 
@@ -138,8 +149,8 @@ The entire process of finding a domain's IP address, including DNS lookup, is kn
 
 ## Establishing connection with the server
 
-Once the browser has the IP address, it establishes a connection with the server using protocols like `TCP` 
-transmission control protocol for http or `TLS` transport layer security for https. 
+Once the browser has the IP address, it establishes a connection with the server using protocols like `TCP`
+transmission control protocol for http or `TLS` transport layer security for https.
 
 ### ARP (Address Resolution Protocol)
 
@@ -157,7 +168,7 @@ After obtaining the MAC address; a `TCP Handshake` is initiated.
 
 - The server responds with a SYN-ACK packet.
 
-- The client sends an ACK packet. 
+- The client sends an ACK packet.
 
 This completes the TCP Handshake. In order to close a connection, a `TCP Termination` or 4-way handshake is initiated.
 
@@ -167,21 +178,21 @@ This completes the TCP Handshake. In order to close a connection, a `TCP Termina
 
 - The client sends an ACK packet.
 
-Browsers keep the connection open for a particular period of time using a `Keep-alive connection` (also known as `HTTP persistent connection`) to speed up loading. This reduces the number of round trips needed to establish a connection. 
+Browsers keep the connection open for a particular period of time using a `Keep-alive connection` (also known as `HTTP persistent connection`) to speed up loading. This reduces the number of round trips needed to establish a connection.
 
 ### TLS Handshake
 
 A `TLS handshake` involves encryption and decryption, making it more complex than a TCP handshake. Techniques like `session resumption` are used to reduce the cost of this process.
 
-- The client sends a `ClientHello` message with its __TLS version, list of cipher algorithms, and compression methods__.
+- The client sends a `ClientHello` message with its **TLS version, list of cipher algorithms, and compression methods**.
 
-- The server replies with a `ServerHello` message, including its TLS version, selected cipher, compression methods, and a public certificate. 
+- The server replies with a `ServerHello` message, including its TLS version, selected cipher, compression methods, and a public certificate.
 
-- The public certificate contains the server's public key and information about it. 
+- The public certificate contains the server's public key and information about it.
 
 - The client verifies the certificate and encrypts a string of random bytes with the server’s public key.
 
-- The server decrypts this with its private key to create a symmetric master key. 
+- The server decrypts this with its private key to create a symmetric master key.
 
 - The client sends a Finished message, encrypted with the symmetric key.
 
