@@ -9,14 +9,13 @@
 | S.No. | Topics                          |                              Link                               |
 | :---: | :------------------------------ | :-------------------------------------------------------------: |
 |  1.   | Introduction to Web Development | [Link](./01.%20Introduction%20to%20Web%20Development/Readme.md) |
-|  2.   | HTML                            |                  [Link](./2_FrontEnd/1_HTML/)                   |
-|  3.   | CSS                             |              [Link](./2_FrontEnd/2_CSS/Readme.md)               |
-|  4.   | JavaScript                      |                     [Link](./3_Javascript/)                     |
-|  5.   | React                           |             [Link](./2_FrontEnd/3_REACT/Readme.md)              |
-|  6.   | Node                            |             [Link](./4_BackEnd/1_Server/1_NODE_JS/)             |
-|  7.   | Express                         |           [Link](./4_BackEnd/1_Server/2_EXPRESS_JS/)            |
-|  8.   | Database                        |           [Link](./4_BackEnd/2_Database/2_MONGO_DB/)            |
-|  9.   | Typescript                      |                     [Link](./5_Typescript/)                     |
+|  2.   | HTML                            |                  [Link](./02%20HTML/Readme.md)                  |
+|  3.   | CSS                             |                  [Link](./03%20CSS/Readme.md)                   |
+|  4.   | JavaScript                      |               [Link](./04%20JavaScript/Readme.md)               |
+|  5.   | React JS                        |               [Link](./05%20React%20JS/Readme.md)               |
+|  6.   | Node JS                         |               [Link](./06%20Node%20JS/Readme.md)                |
+|  7.   | Express                         |              [Link](./07%20Express%20JS/Readme.md)              |
+|  8.   | Typescript                      |               [Link](./07%20Typescript/Readme.md)               |
 
 ---
 
