@@ -1,56 +1,58 @@
 * {
   font-weight: bold;
-  background-color: #F2DEBA;
-  align-items: center;
-  text-align: center;
+  background-color: #f4f3f0;
 }
 
 h1 {
-  padding-top: 150px;
-  color: #6C00FF;
+  padding-top: 100px;
+  text-align: center;
+  color: #6c00ff;
 }
 
 h2 {
-  color: #6C00FF;
+  color: #ff0800;
 }
 
 h2:first-of-type {
-  color: darkgreen;
+/* :first-of-type is a pseudo selector that would select the first appearing tag of the defined type and apply the styling */
+  color: rgb(55, 52, 2);
 }
 
-/* :first-of-type is a pseudo selector that would select the first appearing tag of the defined type and apply the styling */
-
 p {
+  text-align: end;
   font-size: large;
-  color: #6C00FF;
-  padding: 2px;
+  color: #6c00ff;
+  padding: 5px;
 }
 
 /* pseudo class selectors */
 a:link {
-  color: #2C00FF;
+  color: #952686;
 }
-
 /* The above pseudo selector would apply the css to the link
  before we click on them, after clicking it would not be applicable */
 
 a:visited {
   color: #ff0000;
 }
-
 /* The above pseudo selector would apply the css to the link
  after clicking it */
 
 .hello h2::first-letter {
-  color: aliceblue;
-  font-size: 2em;
+  font-size: 4em;
 }
 
-
 .hello h2::before {
-  content: ">";
+  content: "💫";
 }
 
 .hello h2::after {
-  content: "<";
+  content: "💫";
+}
+
+.form {
+  text-align: center;
+}
+.form:hover {
+  color: #ff0000;
 }
