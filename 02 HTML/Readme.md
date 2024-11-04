@@ -1,3 +1,8 @@
+<!-- 
+Author : Kannan Jayachandran
+Section : HTML 
+-->
+
 # HTML : HyperText Markup Language
 
 **[MDN Documentation](https://developer.mozilla.org/en-US/docs/Web/HTML) | [Awesome resource for HTML](https://htmlreference.io/)**
