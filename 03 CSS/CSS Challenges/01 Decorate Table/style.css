@@ -1,0 +1,22 @@
+table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+tr:nth-of-type(odd) {
+    background: #eee;
+}
+
+th {
+    background: #322;
+    color: white;
+}
+
+td, th {
+    padding: 10px;
+    text-align: left;
+}
+
+tr:hover {
+    background-color: coral;
+}
