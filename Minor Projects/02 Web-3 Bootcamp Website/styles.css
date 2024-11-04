@@ -16,8 +16,8 @@ body {
 }
 
 a.navbar-brand {
-    font-family: 'Pacifico', cursive;
-    font-size: 1.1rem;
+    font-family: 'Pacifico';
+    font-size: 1.5rem;
 }
 
 
@@ -25,4 +25,92 @@ a.navbar-brand {
     background-color: #FFC107;
     color: black;
     border-color: #FFC107;
+}
+
+.btn-dark:hover {
+    color: black;
+    background-color: #FFC107;
+}
+
+
+.pricing_design .single-pricing{
+    background:#705be2;
+    padding: 60px 40px;
+    border-radius:30px;
+    box-shadow: 0 10px 40px -10px rgba(0,64,128,.2);
+    position: relative;
+    z-index: 1;
+    margin-bottom: 20px;
+}
+.pricing_design .single-pricing:before{
+    content: "";
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    border-radius: 18px 18px 190px 18px;
+    border: 1px solid #eee;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+}
+
+.price-head h2 {
+	margin-bottom: 20px;
+	font-size: 26px;
+	font-weight: 600;
+}
+.price-head h1 {
+	font-weight: 600;
+	margin-top: 30px;
+	margin-bottom: 5px;
+}
+
+
+.single-pricing ul{list-style:none;margin-top: 30px;}
+.single-pricing ul li {
+	line-height: 36px;
+}
+.single-pricing ul li i {
+	background: #705be2;
+	color: #fff;
+	width: 20px;
+	height: 20px;
+	border-radius: 30px;
+	font-size: 11px;
+	text-align: center;
+	line-height: 20px;
+	margin-right: 6px;
+}
+
+.price_btn {
+	background: #705be2;
+	padding: 10px 30px;
+	color: #fff;
+	display: inline-block;
+	margin-top: 20px;
+	border-radius: 2px;
+	-webkit-transition: 0.3s;
+	transition: 0.3s;
+}
+.price_btn:hover{
+    color: black;
+    background:#FFC107;}
+a{
+text-decoration:none;    
+}
+
+.section-title {
+    margin-bottom: 60px;
+}
+.text-center {
+    text-align: center!important;
+}
+
+.section-title h2 {
+    font-size: 45px;
+    font-weight: 600;
+    margin-top: 0;
+    position: relative;
+    text-transform: capitalize;
 }
