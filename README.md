@@ -4,7 +4,6 @@
 
 <img src="./Cover_Photo.png" width="320" height="380" alt="DALL-E Generated Image of a old computer" />
 
-## Topics
 
 | S.No. | Topics                          |                              Link                               |
 | :---: | :------------------------------ | :-------------------------------------------------------------: |
