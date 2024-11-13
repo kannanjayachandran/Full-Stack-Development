@@ -215,7 +215,7 @@ dispatch({type: 'increment'});
 
 ## Effect Hook
 
-The `useEffect` hook is used to perform side effects in a functional component. Side effects are things like data fetching, setting up subscriptions, and manually changing the DOM. The `useEffect` hook takes in two arguments, a function that performs the side effect and an array of dependencies. The function that performs the side effect is called the effect function. The effect function is called after the component is rendered to the DOM. The array of dependencies is used to tell react when to run the effect function. If the array of dependencies is empty, the effect function is called only once after the component is rendered to the DOM. If the array of dependencies is not empty, the effect function is called whenever one of the dependencies changes. we dont pass `async` function to `useEffect` directly, instead we create a function inside `useEffect` and call it.
+The `useEffect` hook is used to perform side effects in a functional component. Side effects are things like data fetching, setting up subscriptions, and manually changing the DOM. The `useEffect` hook takes in two arguments, a function that performs the side effect and an array of dependencies. The function that performs the side effect is called the effect function. The effect function is called after the component is rendered to the DOM. The array of dependencies is used to tell react when to run the effect function. If the array of dependencies is empty, the effect function is called only once after the component is rendered to the DOM. If the array of dependencies is not empty, the effect function is called whenever one of the dependencies changes. we don't pass `async` function to `useEffect` directly, instead we create a function inside `useEffect` and call it.
 
 ```jsx
 import {useEffect} from 'react';
@@ -288,7 +288,7 @@ export default function App() {
 }
 ```
 
-- While `Refs` are this specific functionality within react; we can really think of them as just a syntactic sugar around this idea of passing in an object to State and never calling the setter function. This primary purpose this is that the value is going to persist accross renders; but changing the value is never going to cause a re-render. One of the general usecse of `Refs` 
+- While `Refs` are this specific functionality within react; we can really think of them as just a syntactic sugar around this idea of passing in an object to State and never calling the setter function. This primary purpose this is that the value is going to persist across renders; but changing the value is never going to cause a re-render. One of the general use case of `Refs` 
 
 - We can use a `forwardRef` to pass a ref to a child component. This is useful when we need to access a child component directly.
 
@@ -380,7 +380,7 @@ const MyComponent = memo(function MyComponent(props) {
 });
 ```
 
-The `useMemo` hook memoises the value of a function based on its dependencies, whhile `React.memo` memoises the result of a functional component based on its props. We can also use something called `useCallback` to memoise the function itself.
+The `useMemo` hook memoises the value of a function based on its dependencies, while `React.memo` memoises the result of a functional component based on its props. We can also use something called `useCallback` to memoise the function itself.
 
 ### Lazy Loading
 
