@@ -6,7 +6,7 @@
 
 ## Topics
 
-| S.No. | Topics                          |                              Link                               |
+| S.No. | Name                            |                              Link                               |
 | :---: | :------------------------------ | :-------------------------------------------------------------: |
 |  1.   | Introduction to Web Development | [Link](./01.%20Introduction%20to%20Web%20Development/Readme.md) |
 |  2.   | HTML                            |                  [Link](./02%20HTML/Readme.md)                  |
