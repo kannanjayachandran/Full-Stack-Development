@@ -2,10 +2,6 @@
 
 # Full Stack Web Development
 
-<img src="./Cover_Photo.png" width="320" height="380" alt="DALL-E Generated Image of a old computer" />
-
-## Topics
-
 | S.No. | Name                            |                              Link                               |
 | :---: | :------------------------------ | :-------------------------------------------------------------: |
 |  1.   | Introduction to Web Development | [Link](./01.%20Introduction%20to%20Web%20Development/Readme.md) |
