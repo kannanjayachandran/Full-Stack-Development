@@ -1,11 +1,12 @@
-<h1 align="center">JavaScript</h1>
+# JavaScript
+
+JavaScript is a high-level, interpreted (or JIT compiled) programming language. It is the language of the web, and it is used to add interactivity and dynamic content to websites.
 
 ## Variables
 
-
 ### var
 
-> `var` It can be used to declare a variable with or without a value. It is globally scoped when declared outside a function and function scoped when declared inside a function.
+`var` can be used to declare a variable with or without value. It is globally scoped when declared outside a function and function scoped when declared inside a function.
 
 ```js
 var a = 1;
@@ -15,7 +16,7 @@ var c;
 
 ### let
 
-> `let` block-scoped, local variable in JavaScript. It can be used to declare a variable with or without a value.
+`let` is block-scoped, local variable in JavaScript. It can also be used to declare a variable with or without value.
 
 ```js
 let a = 1;
@@ -25,7 +26,7 @@ let c;
 
 ### const
 
-> `const` used to declare a block-scoped, read-only named constant in JavaScript. It can be used to declare a variable with or without a value.
+`const` is used to declare a block-scoped, read-only named constant in JavaScript. It also can be used to declare a variable with or without value.
 
 ```js
 
@@ -37,7 +38,7 @@ const c;
 
 <details>
 
-<summary> 🎉</summary>
+<summary> Variables 🎉</summary>
 
 - Use `const` whenever possible to avoid surprises.
 
