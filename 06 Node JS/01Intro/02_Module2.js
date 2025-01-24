@@ -1,4 +1,5 @@
-
+// export function
+const another_secret = "Secret information"
 const helloFunc = (name) => {
     console.log(`Hello ${name}`);
 }

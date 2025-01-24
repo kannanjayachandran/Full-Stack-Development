@@ -1,5 +1,5 @@
 // exporting on the go
-module.exports.items = ['Item1', 'Item2', 'Item3']; // exporting an array on the go.
+module.exports.items = ['Item1', 'Item2', 'Item3'];
 
 const Person = {
     name: "Kannan",

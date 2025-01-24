@@ -1,8 +1,5 @@
-const a = 10;
-const b = 20;
-
-const doom = () => {
-    console.log(`Your code is doomed ${a + b}`);
+const greet = () => {
+    console.log('Hello...');
 }
 
-doom();
+export default greet;

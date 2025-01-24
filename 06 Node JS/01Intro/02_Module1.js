@@ -1,9 +1,5 @@
-// Modules
-// Every file in node is a module. Node uses common JS library under the hood.
-// Only sharing the minimum data or information is the reason for module
-// Modules are essentially the mechanism which enables us to reuse the code.
-
-const secret = "Secret Information";
+// export information
+const secret = "Secret Information DO NOT SHARE";
 const john = "John";
 const peter = "Peter"
 
